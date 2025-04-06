@@ -1,2 +1,4 @@
 # 81pkg
-The official Repo of The 81manorg Linux package manager
+The official repo of 81manorg Linux packages.
+
+Package manager: apt
