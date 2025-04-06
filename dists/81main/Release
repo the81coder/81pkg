@@ -2,6 +2,6 @@ Origin: 81manorg
 Label: 81manorg
 Suite: 81main
 Codename: 81main
-Architectures: x86_64-generic
+Architectures: amd64
 Components: main
 Description: 81manorg APT Repository
