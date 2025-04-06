@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>81manorg APT Repository</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+      padding: 2rem;
+    }
+    h1 {
+      color: #81f497;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    a {
+      color: #81c9f4;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .path {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>81manorg APT Repository</h1>
+  <p>This is the public package index for the <strong>81pkg</strong> APT repo.</p>
+
+  <h2>Available Packages</h2>
+  <ul id="package-list">
+    <li>Loading packages...</li>
+  </ul>
+
+  <h2>APT Repo Info</h2>
+  <pre><code>deb [trusted=yes] https://shreyashsarkaringithub4636.github.io/81pkg 81main main</code></pre>
+
+  <script>
+    async function fetchPackages() {
+      const listEl = document.getElementById("package-list");
+      listEl.innerHTML = "";
+
+      const basePath = "pool/main/";
+      const arches = ["l"]; // You can expand this if needed
+      for (const arch of arches) {
+        const url = `${basePath}${arch}/libc6/`;
+        try {
+          const res = await fetch(url);
+          const html = await res.text();
+
+          const matches = [...html.matchAll(/href="([^"]+\.deb)"/g)];
+
+          if (matches.length === 0) {
+            listEl.innerHTML += `<li>No .deb packages found in ${url}</li>`;
+            continue;
+          }
+
+          for (const match of matches) {
+            const filename = match[1];
+            const fullPath = `${url}${filename}`;
+            listEl.innerHTML += `
+              <li>
+                <a href="${fullPath}">${filename}</a>
+                <div class="path">${fullPath}</div>
+              </li>`;
+          }
+        } catch (err) {
+          listEl.innerHTML += `<li>Error loading from ${url}</li>`;
+        }
+      }
+    }
+
+    fetchPackages();
+  </script>
+</body>
+</html>
