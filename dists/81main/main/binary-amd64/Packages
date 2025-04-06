@@ -6,7 +6,7 @@ Depends: libgcc1 (>= 1:3.0)
 Conflicts: libc6 (<< 2.39-1)
 Replaces: libc6 (<< 2.39-1)
 Provides: libc6
-Filename: pool/main/l/libc6/libc6.deb
+Filename: ../../../../pool/main/l/libc6/libc6.deb
 Size: 1332344
 MD5sum: 6fed6da92f45b1f0a1421e53d928df50
 SHA1: 53d9f69178e06936ee1f441ce58eefe649b92465
@@ -18,4 +18,61 @@ Description: GNU C Library version 2.39 (production build)
  contains version 2.39 of glibc built from source for production use,
  with full compatibility for dynamic linking, locale, threading,
  and other runtime components.
+
+Package: linux-headers-6.12.21
+Source: linux-upstream
+Version: 6.12.21-5
+Architecture: amd64
+Maintainer: shreyash <shreyash@DESKTOP-T5QDVI4.>
+Installed-Size: 51227
+Filename: ../../../../pool/main/l/linux/linux-headers-6.12.21_6.12.21-5_amd64.deb
+Size: 9078166
+MD5sum: 2717a76886fd2db609e42a8e08192e75
+SHA1: 67a1cbcf0c54eb1061383840592d30a05dc541f7
+SHA256: 8cece6aecabcac57f84e92709159cd307d358f97d458b612012ac2a0848bfc24
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux kernel headers for 6.12.21 on amd64
+ This package provides kernel header files for 6.12.21 on amd64
+ .
+ This is useful for people who need to build external modules
+
+Package: linux-image-6.12.21
+Source: linux-upstream
+Version: 6.12.21-5
+Architecture: amd64
+Maintainer: shreyash <shreyash@DESKTOP-T5QDVI4.>
+Installed-Size: 46921
+Filename: ../../../../pool/main/l/linux/linux-image-6.12.21_6.12.21-5_amd64.deb
+Size: 20264490
+MD5sum: 33690f56b74a5bad88988a1ac2051411
+SHA1: aafe63b31d414f6962ee24f6354d8d645ba886fc
+SHA256: 0789aff69e9d02a766f49b725f3e65e405a989d24741525fb629f64b8a922e15
+Section: kernel
+Priority: optional
+Homepage: https://www.kernel.org/
+Description: Linux kernel, version 6.12.21
+ This package contains the Linux kernel, modules and corresponding other
+ files, version: 6.12.21.
+
+Package: linux-libc-dev
+Source: linux-upstream
+Version: 6.12.21-5
+Architecture: amd64
+Maintainer: shreyash <shreyash@DESKTOP-T5QDVI4.>
+Installed-Size: 7186
+Provides: linux-kernel-headers
+Filename: ../../../../pool/main/l/linux/linux-libc-dev_6.12.21-5_amd64.deb
+Size: 1440314
+MD5sum: db920ce395b5c40e5bf561e27fae2eef
+SHA1: 5dea0da2078354529c493e35eb273605f9e87040
+SHA256: c978eddadc3d5c6d92c1b08b0ba2846cbb64b12b408550908a87f08c2b23b694
+Section: devel
+Priority: optional
+Multi-Arch: same
+Homepage: https://www.kernel.org/
+Description: Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
 
