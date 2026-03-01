@@ -1,7 +1,17 @@
-Origin: 81manorg
-Label: 81manorg
-Suite: 81main
-Codename: 81main
-Architectures: amd64
-Components: main
-Description: 81manorg APT Repository
+Date: Sun, 01 Mar 2026 16:53:28 +0000
+MD5Sum:
+ c8f52a4f7a8a721e239d91590b5eff04               38 Release
+ 53d699dced93f199d5bb1f18768ed003             2677 main/binary-amd64/Packages
+ 9f17e230f93e908cef29277adcbb7945             1109 main/binary-amd64/Packages.gz
+SHA1:
+ e5bbd4519bd6e17926752cd9d2a6115439508c25               38 Release
+ 9dd38294fe09a04373f1a28bddcb579a631e67d5             2677 main/binary-amd64/Packages
+ e6abe590b7cf9a5bac0926f777583f9b6f334264             1109 main/binary-amd64/Packages.gz
+SHA256:
+ 621b707f942f84e05913dbe2536aad3c189222019a0e987299e4098e11a93ef6               38 Release
+ 9d18f4c580c8beab7ff13be17815699126383eabb7cebbfee25dc74f03a5b4c0             2677 main/binary-amd64/Packages
+ 18d86e5781dd5020683362f2ea24ba24e090c2b15ae6d45efcf91ee99f6802c7             1109 main/binary-amd64/Packages.gz
+SHA512:
+ cd124909677256495cf08a4fc4a6ea9ba4aac0d1d0a476914c46249b9cae1d92fbe3430b47b4eca28243ef81454484236a8a0ced59bb924ce6a2f7ad9ec765a1               38 Release
+ 62972da3c2358a1742fbd4e9509db91a87a6c93231cc204cb041a60e3f7ab6fbf66fa2409dff26b8321f2a85a1f3535adaa916c2c0a2ba6701597b20d538c7be             2677 main/binary-amd64/Packages
+ 694eda0287ae89a1018af22823b5e007de1350fa1b30f3b4c1b21b786454adf2305560d1ceeb1129d326964682f8d98ff46705462339cd94ad6c7ec1b135db8c             1109 main/binary-amd64/Packages.gz

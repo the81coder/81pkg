@@ -66,7 +66,7 @@ cat >> $OUTPUT <<EOF
   <hr />
 
   <h3>APT Repo Info</h3>
-  <pre>deb [trusted=yes] https://shreyashsarkaringithub4636.github.io/81pkg 81main main</pre>
+  <pre>deb [trusted=yes] https://the81coder.github.io/81pkg 81main main</pre>
 </body>
 </html>
 EOF
