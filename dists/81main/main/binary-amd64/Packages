@@ -1,3 +1,23 @@
+Package: busybox
+Version: 1.36.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <the81coder@github.io>
+Installed-Size: 1980
+Filename: pool/main/b/busybox_1.36.1-1_amd64.deb
+Size: 760368
+MD5sum: d8e806626ab74aaa0adaff9f3ae78303
+SHA1: 82f969ea53199f0c22bb682d4fe38891b5cc2563
+SHA256: 93ec2efb3b5ea64bd6700c2428b9ec21fa575ad0e7fe4006625690c524c70f3d
+Section: utils
+Priority: required
+Description: Tiny utilities for small and embedded systems (with dpkg support)
+ BusyBox combines tiny versions of many common UNIX utilities into a single
+ small executable. It provides replacements for most of the utilities you
+ usually find in GNU fileutils, shellutils, etc.
+ .
+ This build includes dpkg and dpkg-deb applets, making it suitable for
+ 81manorg's package management.
+
 Package: linux-headers-6.12.74lts-81manorg
 Source: linux-upstream
 Version: 6.12.74-7
