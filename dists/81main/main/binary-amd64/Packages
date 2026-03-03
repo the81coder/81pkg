@@ -3,7 +3,7 @@ Version: 1.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <the81coder@github.io>
 Depends: musl, busybox, linux-image-6.12.74lts-81manorg
-Filename: pool/main/b/base-81manorg_1.0-1_amd64.deb
+Filename: pool/main/b/base-81manorg/base-81manorg_1.0-1_amd64.deb
 Size: 1244
 MD5sum: f434ef28f6eb953e02676e8f42e62496
 SHA1: 70bac05d6a871f6329a1a59e436c5dd8d6afc5bc
@@ -21,7 +21,7 @@ Version: 1.36.1-1
 Architecture: amd64
 Maintainer: 81manorg Linux <the81coder@github.io>
 Installed-Size: 1980
-Filename: pool/main/b/busybox_1.36.1-1_amd64.deb
+Filename: pool/main/b/busybox/busybox_1.36.1-1_amd64.deb
 Size: 760368
 MD5sum: d8e806626ab74aaa0adaff9f3ae78303
 SHA1: 82f969ea53199f0c22bb682d4fe38891b5cc2563
@@ -38,15 +38,15 @@ Description: Tiny utilities for small and embedded systems (with dpkg support)
 
 Package: linux-headers-6.12.74lts-81manorg
 Source: linux-upstream
-Version: 6.12.74-7
+Version: 6.12.74-11
 Architecture: amd64
 Maintainer: the81gamer <the81gamer@5445INSPIRON14>
-Installed-Size: 51724
-Filename: pool/main/l/linux-headers-6.12.74lts-81manorg_6.12.74-7_amd64.deb
-Size: 8855120
-MD5sum: b09c3a38168e1af48f6239c5727756ec
-SHA1: d71b8618c9911a6f06eb89ce8de4f6c9a25997d9
-SHA256: acac879c368911dfd87ca64557a02df19697c9e11a5f1ce380efd0dee4daf59d
+Installed-Size: 51744
+Filename: pool/main/l/linux-lts-headers/linux-headers-6.12.74lts-81manorg_6.12.74-11_amd64.deb
+Size: 8855784
+MD5sum: c5ee3654079b4ee391dff6a805537311
+SHA1: 0c4ec8aae4222a7886dbce03728a630abddcc3d3
+SHA256: b76cd3f04dbd507aebc3b966727b22273f8b11a5a69b24defb18826f164cdc55
 Section: kernel
 Priority: optional
 Homepage: https://www.kernel.org/
@@ -57,15 +57,15 @@ Description: Linux kernel headers for 6.12.74lts-81manorg on amd64
 
 Package: linux-image-6.12.74lts-81manorg
 Source: linux-upstream
-Version: 6.12.74-7
+Version: 6.12.74-11
 Architecture: amd64
 Maintainer: the81gamer <the81gamer@5445INSPIRON14>
-Installed-Size: 52815
-Filename: pool/main/l/linux-image-6.12.74lts-81manorg_6.12.74-7_amd64.deb
-Size: 42217380
-MD5sum: 364e408a329238a9b914b8d729b8a786
-SHA1: 76eb462b256c4f344da588bb5033ec95b4366d11
-SHA256: 643e31e7851d00065db35563181084ff03b28bbf1f82f0241322e0db19946b8a
+Installed-Size: 53584
+Filename: pool/main/l/linux-lts/linux-image-6.12.74lts-81manorg_6.12.74-11_amd64.deb
+Size: 42849280
+MD5sum: 596203c895a795abe51b2ab6410e4d82
+SHA1: 9fb59e56e75f6df3aad5b0d9234b2ef890c6d8f0
+SHA256: ede3028a129bab7b1fa41d7904af4a6ad2217219bc67031eb0ee1b7d243af9bb
 Section: kernel
 Priority: optional
 Homepage: https://www.kernel.org/
@@ -75,16 +75,16 @@ Description: Linux kernel, version 6.12.74lts-81manorg
 
 Package: linux-libc-dev
 Source: linux-upstream
-Version: 6.12.74-7
+Version: 6.12.74-11
 Architecture: amd64
 Maintainer: the81gamer <the81gamer@5445INSPIRON14>
 Installed-Size: 7191
 Provides: linux-kernel-headers
-Filename: pool/main/l/linux-libc-dev_6.12.74-7_amd64.deb
-Size: 1395760
-MD5sum: 74a62c028bcedfb1649f42d9a8c22cfe
-SHA1: d243456cec775c73e918a32c5027720da6b979be
-SHA256: b537cc13f681b16856cd182c0f5708527acd87dafa06980abb4de100fb6768ab
+Filename: pool/main/l/linux-lts-libc-dev/linux-libc-dev_6.12.74-11_amd64.deb
+Size: 1395832
+MD5sum: a1ea08041521fcd2617c3c63ee5c4270
+SHA1: c7034744b115dc2188fa42a3b84be08c54267ad4
+SHA256: 1fa3185044ceb8733459efe1a3ceef78656fb7d2da94587e921d4f0b5d3b7145
 Section: devel
 Priority: optional
 Multi-Arch: same
@@ -98,7 +98,7 @@ Version: 1.2.5-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Installed-Size: 4672
-Filename: pool/main/m/musl_1.2.5-1_amd64.deb
+Filename: pool/main/m/musl/musl_1.2.5-1_amd64.deb
 Size: 655632
 MD5sum: a2bc171bd2fd66f78fd7dc898536090b
 SHA1: 955383bad5a4ed2cd078a990663d94c11fcfb17a
