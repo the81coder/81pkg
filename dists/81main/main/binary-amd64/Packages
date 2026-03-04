@@ -36,11 +36,11 @@ Description: Tiny utilities for small and embedded systems (with dpkg support)
  This build includes dpkg and dpkg-deb applets, making it suitable for
  81manorg's package management.
 
-Package: linux-headers-6.12.74lts-81manorg
+Package: linux-lts-headers
 Source: linux-upstream
 Version: 6.12.74-13
 Architecture: amd64
-Maintainer: the81gamer <the81gamer@5445INSPIRON14>
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Installed-Size: 51817
 Filename: pool/main/l/linux-lts-headers/linux-headers-6.12.74lts-81manorg_6.12.74-13_amd64.deb
 Size: 8863484
@@ -55,11 +55,11 @@ Description: Linux kernel headers for 6.12.74lts-81manorg on amd64
  .
  This is useful for people who need to build external modules
 
-Package: linux-image-6.12.74lts-81manorg-dbg
+Package: linux-lts
 Source: linux-upstream
 Version: 6.12.74-13
 Architecture: amd64
-Maintainer: the81gamer <the81gamer@5445INSPIRON14>
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Installed-Size: 2208480
 Filename: pool/main/l/linux-lts/linux-image-6.12.74lts-81manorg-dbg_6.12.74-13_amd64.deb
 Size: 374059900
@@ -73,11 +73,11 @@ Description: Linux kernel debugging symbols for 6.12.74lts-81manorg
  This package will come in handy if you need to debug the kernel. It provides
  all the necessary debug symbols for the kernel and its modules.
 
-Package: linux-libc-dev
+Package: linux-lts-libc-dev
 Source: linux-upstream
 Version: 6.12.74-13
 Architecture: amd64
-Maintainer: the81gamer <the81gamer@5445INSPIRON14>
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Installed-Size: 7191
 Provides: linux-kernel-headers
 Filename: pool/main/l/linux-lts-libc-dev/linux-libc-dev_6.12.74-13_amd64.deb
