@@ -1,25 +1,17 @@
-Origin: 81manorg
-Label: 81manorg Linux
-Suite: 81main
-Codename: 81main
-Architectures: amd64
-Components: main
-Description: 81manorg APT Repository
-Date: Sun, 01 Mar 2026 19:08:24 +0000
-Date: Sun, 01 Mar 2026 19:08:24 +0000
+Date: Wed, 04 Mar 2026 09:43:14 +0000
 MD5Sum:
- 50cf124c169d7aa00985a89d2daa77b5              221 Release
- d8a5f9836ab23a211e79f65c3f13b48d             4131 main/binary-amd64/Packages
- 65a06eea40d347c10cdb7c22f9d050a3             1720 main/binary-amd64/Packages.gz
+ 949bc778e1e49a34b7e76c70e217028f               38 Release
+ c47e054f68292342485c5ea3e7762984             4246 main/binary-amd64/Packages
+ 6bd7c447457d6290e6d76089bb85d644             1754 main/binary-amd64/Packages.gz
 SHA1:
- 86e7bd5e655f3732b82f342845e4d9342c22b51a              221 Release
- bb1dfdbab2749ac567d42252cb98516999d7846a             4131 main/binary-amd64/Packages
- 84555013cfb6409ef058e0485d134e194f7d6ab3             1720 main/binary-amd64/Packages.gz
+ 125baee57c3b2e96f108984822971aa78c6b6cd3               38 Release
+ b9313b1f77a324b040aec4798b6bfd3d651183f0             4246 main/binary-amd64/Packages
+ 6d87745099113744f0a0d1b135c3d72bd22d22fb             1754 main/binary-amd64/Packages.gz
 SHA256:
- 317052c8a1fadddc23b439a20d22ac2bbea3a32fe25799c00e0b37ebde516c08              221 Release
- 262a5ee35dbc0d29c09e1a09542b341348ca8182c7fae1d296360d57c17b343d             4131 main/binary-amd64/Packages
- e1b6214f38f2b4bf9d2cbc4fa0d215ee722ae4acf69f4dfd0f655aa6b987dec9             1720 main/binary-amd64/Packages.gz
+ 1bcf77f19f194e592b566fab4e9dda9bcebb4f83ad1d4b55bf025259fd2bff05               38 Release
+ ef0fedd8793a2a16f3cb441d4bf0465d217aa814115b028354f8bebad04691a1             4246 main/binary-amd64/Packages
+ 42972dd98d01397bca72a223ecdb1adbb4f3cf5be8d5e1d7e173d73168ab5649             1754 main/binary-amd64/Packages.gz
 SHA512:
- c47645aaa49ac2b3935a1fbaad6a907279c666b723a9b16c40d447a43e6713f624ae326eb45672c7b79e39901c53b24fb087c111e6a773b50779a5e1a69675c2              221 Release
- eff1775e457c59d7827aab4eb224e6885d8db1cfc5ca096f4e5d52b1259225c323fa92f9984090fea05fe2f45f237f3828a10297ab297f7f32ccb7280de88620             4131 main/binary-amd64/Packages
- 681b14b284fd6b64d7e23806a638c54b63a4877d596ad828dc9e573ab23762ef6933f01f9fed8aef6b6603a05ac33177c9705b518e945bbb4c4c7ba4c766fa00             1720 main/binary-amd64/Packages.gz
+ 5ed14636919290402951fea2fcf058a6b35405569aa9a6d04613a08c3f502d1cd64b089847f6492a198b6277d67766e3b3996d7d873c95e3e7bb71e69fcd040a               38 Release
+ a80cedf9fc7233b2021f8c9b9ca0720d9e7030d256eef1873d861baf8cffe3b8969816a20c919ccb086838986c9cc4281b4bd4880a6c480f7db5f26e39acc835             4246 main/binary-amd64/Packages
+ f6717f2d82c089ff843a9fc40ce24ac5d7c593026f8da273a1bb60f3c4936757f726cb576a16dc5311eafed242b0b74c220fc34f3a8019b74a9d8158e0bfad6b             1754 main/binary-amd64/Packages.gz
