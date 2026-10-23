@@ -1,113 +1,781 @@
-Package: base-81manorg
+Package: 81pkg
+Version: 3.0.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: bash, busybox
+Filename: pool/main/8/81pkg/81pkg_3.0.0-1_amd64.deb
+Size: 14360
+MD5sum: a2f11df6d951726a632d4cb87e39d4ee
+SHA1: 1f398dba180464c7f8b195570517c5fcde9f38dc
+SHA256: 322b198dbcd15fcdb31f949b4e565d5f9e9e3e7fbe69fa35f1466e93db25f456
+Description: 81manorg Package Manager
+
+Package: 81pkg-keyring
 Version: 1.0-1
 Architecture: amd64
-Maintainer: 81manorg Linux <the81coder@github.io>
-Depends: musl, busybox, linux-image-6.12.74lts-81manorg
-Filename: pool/main/b/base-81manorg/base-81manorg_1.0-1_amd64.deb
-Size: 1244
-MD5sum: f434ef28f6eb953e02676e8f42e62496
-SHA1: 70bac05d6a871f6329a1a59e436c5dd8d6afc5bc
-SHA256: 40e6afe348e8dca3f2354ddd2ce4c2ab476f15c4307be9ff41a80ade5de62814
-Section: metapackages
-Priority: required
-Description: 81manorg base system
- This metapackage installs the core components of 81manorg Linux:
- musl libc, busybox (with dpkg support), and the Linux kernel.
- It also creates the essential filesystem directories required for
- a bootable Linux system.
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/8/81pkg-keyring/81pkg-keyring_1.0-1_amd64.deb
+Size: 848
+MD5sum: 72b72a41a40b5386e1b3b9e234c236c1
+SHA1: 2115e21053c6d88c72e1d6918d567041a4a1286f
+SHA256: c4975eb5bd7abeec3f06d0307b0545e0bb58b744f3f3d4927252d4a2ae04e2b4
+Description: 81manorg GPG keyring for package verification
+
+Package: base
+Version: 1.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, connman, dbus, 81pkg, linux-pam, elogind, bash-completion
+Filename: pool/main/b/base/base_1.0-1_amd64.deb
+Size: 856
+MD5sum: af1cb571039699da24ef461aeb80f374
+SHA1: 65fea5a912b55bde6f5af376e9963a8d4e6bccc6
+SHA256: 86a42915ca0beab593f5a2bdc5e30eaf1958752bf4eb7db2b0b0a1aa65807157
+Description: 81manorg Base System (meta)
+
+Package: bash
+Version: 5.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: readline, ncurses
+Filename: pool/main/b/bash/bash_5.3-1_amd64.deb
+Size: 1711944
+MD5sum: 9165ae938201b5d86b2480b2b2ef4576
+SHA1: 5eeabdccfffe64d3f5658320c0800121575df956
+SHA256: b1448734484da4a4c2cdc694d0db02bec102e05debdc405a8a7df2722be72a65
+Description: GNU Bourne-Again Shell
+
+Package: bash-completion
+Version: 2.18.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: bash
+Filename: pool/main/b/bash-completion/bash-completion_2.18.0-1_amd64.deb
+Size: 192752
+MD5sum: d42181fd8ebe73d1bd8d9c58df3f026a
+SHA1: 03781338635c63265da1cb83b6a75304a4f7cb49
+SHA256: 7caed55395bad2ff5eea11e3272b9f6027238d86a38f26eaf13cc1c72270ca2a
+Description: Programmable completion for Bash
 
 Package: busybox
-Version: 1.36.1-1
-Architecture: amd64
-Maintainer: 81manorg Linux <the81coder@github.io>
-Installed-Size: 1980
-Filename: pool/main/b/busybox/busybox_1.36.1-1_amd64.deb
-Size: 760368
-MD5sum: d8e806626ab74aaa0adaff9f3ae78303
-SHA1: 82f969ea53199f0c22bb682d4fe38891b5cc2563
-SHA256: 93ec2efb3b5ea64bd6700c2428b9ec21fa575ad0e7fe4006625690c524c70f3d
-Section: utils
-Priority: required
-Description: Tiny utilities for small and embedded systems (with dpkg support)
- BusyBox combines tiny versions of many common UNIX utilities into a single
- small executable. It provides replacements for most of the utilities you
- usually find in GNU fileutils, shellutils, etc.
- .
- This build includes dpkg and dpkg-deb applets, making it suitable for
- 81manorg's package management.
-
-Package: linux-lts-headers
-Source: linux-upstream
-Version: 6.12.74-13
+Version: 1.38.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Installed-Size: 51817
-Filename: pool/main/l/linux-lts-headers/linux-headers-6.12.74lts-81manorg_6.12.74-13_amd64.deb
-Size: 8863484
-MD5sum: ef84ffc22e0197cd7aebc79e9b8c92fa
-SHA1: 02d675ed83142f272425dc5530e91b74f4540ca0
-SHA256: aafcc21b9ab9950701fa75d30a17a5442168f4f8951a78fabd2e4f6cc73e073f
+Filename: pool/main/b/busybox/busybox_1.38.0-1_amd64.deb
+Size: 684472
+MD5sum: a05f924482ae9da6b4de48e26da0f201
+SHA1: 08bbd27afcb45feb84f561cbe9cba35acbc5560d
+SHA256: 9896aa11f02c6bac8f2bbf42ba01998a0c147c188e818fedcc949d0968253fe2
+Description: Embedded Linux utilities (initramfs + safety net)
+
+Package: bzip2
+Version: 1.0.8-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/b/bzip2/bzip2_1.0.8-1_amd64.deb
+Size: 64904
+MD5sum: 3498f40389596274ed7c52d0639b1786
+SHA1: 3a902068ec11eb6d6c028efd346ce2bc2a39e697
+SHA256: 50581935645d084b0a9a609cd642a106fc1b0e22224ca18c9b1dd0707aa328c3
+Description: bzip2 compression tools and libbz2
+
+Package: ca-certificates
+Version: 20261001-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/c/ca-certificates/ca-certificates_20261001-1_amd64.deb
+Size: 111620
+MD5sum: c6c477456eeec7e412adb8e517dc96cc
+SHA1: 0c1638ef2dc7f79fac43caa3c60e2e473b768500
+SHA256: 908f317a38136730e68a38694ffb896a92a8b73fc9e61d180cbd71ecb27dedea
+Description: Mozilla CA certificate bundle
+
+Package: coreutils
+Version: 0.12.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/c/coreutils/coreutils_0.12.0-1_amd64.deb
+Size: 4022380
+MD5sum: da3039c3c319221f1a915b99bef70c16
+SHA1: 2c86550a9a382369c6ab6817cb0350463c156a89
+SHA256: a6ac523d64e8fa7390a84b0f58e480ab29d3117104d7261efa13ffd439233fd6
+Description: Rust coreutils
+
+Package: curl
+Version: 8.23.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: ca-certificates, openssl, zlib
+Filename: pool/main/c/curl/curl_8.23.0-1_amd64.deb
+Size: 965652
+MD5sum: 589209b6d2ad87ee1f82932066db62c4
+SHA1: 28db76a1fced30047bc47b7292cd8df895f7ebc9
+SHA256: f96d3ad9be6e6e59bf55e25c80503fdc8cc643d6dcbc031462fca2e7f017634c
+Description: URL transfer tool
+
+Package: dbus
+Version: 1.16.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/d/dbus/dbus_1.16.2-1_amd64.deb
+Size: 989180
+MD5sum: db8f86a78c26cd3107b0115540a81639
+SHA1: e92c6278e0a65cb46f9ac3e4bd14b07eb1ff95ba
+SHA256: 3fbaa0781a66b0b8be8c93e90872124ba35d5ece57d09b6b0c049f8a23b19161
+Description: D-Bus message bus
+
+Package: diffutils
+Version: 0.5.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/d/diffutils/diffutils_0.5.0-1_amd64.deb
+Size: 644556
+MD5sum: a6dfda1414ecb2ba7d44db2daab52a72
+SHA1: 84eb6a2feb70072e6c1ccf09ac6954af6f139e6c
+SHA256: 11bac435b233105926d04fc45c50e3e43a90c6e18687b64d69d6282d9b389b0c
+Description: Rust diffutils (diff, cmp)
+
+Package: elogind
+Version: 257.16-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: linux-pam
+Filename: pool/main/e/elogind/elogind_257.16-1_amd64.deb
+Size: 5409672
+MD5sum: af70cab9232ae320476c9ec9f59fba39
+SHA1: 4ef8addb874afd5f4aeea9857a4f1aa4781f6cf9
+SHA256: 2f3c6e98f2c92e5bd082093e20ded6b50369c0e9b3e271c4a9f8cfb2896ab145
+Description: elogind session/login manager (standalone logind fork)
+
+Package: expat
+Version: 2.9.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/e/expat/expat_2.9.0-1_amd64.deb
+Size: 133560
+MD5sum: 8ec7189b01a27cdf427f7bc66969012d
+SHA1: 770bb131bb52b0ab79164a9a486f743df5c4bfed
+SHA256: 6b86edaf8cd50fe7dea750fb50f155da70f3f261a5835290889a3b7646913b2a
+Description: XML parsing library (dbus dependency)
+
+Package: filesystem
+Version: 1.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
+Size: 856
+MD5sum: 6d7f972ccf3f8c2ea3b80982388e6fe4
+SHA1: 38ee1770b0a4f7b51d11eaaf9486f135449663b2
+SHA256: 3db6634075e76e857dca75d61065b079878f9c3ba0336bc6bfb393f0c1f78ac6
+Description: 81manorg base directory layout
+
+Package: findutils
+Version: 0.10.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/f/findutils/findutils_0.10.0-1_amd64.deb
+Size: 1443068
+MD5sum: 5cdf29e6e5e4fc60fd691c5d00a7d055
+SHA1: 682f23878374e87a892bb04277030a6c5195c271
+SHA256: 6d5182bf9d4cc570f952ef43ff87f66f9c86a65989af089ed66e67488416fe95
+Description: Rust findutils (find, locate, updatedb, xargs)
+
+Package: gawk
+Version: 5.4.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/g/gawk/gawk_5.4.1-1_amd64.deb
+Size: 1297940
+MD5sum: 98b1ac50ef9370c659915c20057fcde9
+SHA1: c86ec17ed9a8f2278e0f1ee4bf2aaef814c9ae2b
+SHA256: 2ee42fc49e95ee8406f2dc08dc2e1bb20d83de9e9e69ff624a001d6f4e667934
+Description: GNU awk
+
+Package: genfstab
+Version: 32-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: util-linux-gnu, bash
+Filename: pool/main/g/genfstab/genfstab_32-1_amd64.deb
+Size: 5124
+MD5sum: d0b6493403b838841087d044b4d925ed
+SHA1: 706dfb65c40fdf24ce732c13a64b455f3b5eb1a8
+SHA256: 94906936e5890bced20dc4391d57f460428c0e50662aa55a960913c5968edd10
+Description: Arch install tools
+
+Package: glib
+Version: 2.90.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libzstd, libpcre2
+Filename: pool/main/g/glib/glib_2.90.1-1_amd64.deb
+Size: 7838296
+MD5sum: 1c4d40f72a08431835b238909e913801
+SHA1: 2068360cc5c64fc74ab0d607ed572d3c3987a686
+SHA256: 4d20d5e488eeebbc00bea659bbd36534467b09e18598a08c56f45ad3603029a9
+Description: GLib library
+
+Package: gmp
+Version: 6.3.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/g/gmp/gmp_6.3.0-1_amd64.deb
+Size: 344748
+MD5sum: b1dd7ad8d3a04480df0e5f61746585bf
+SHA1: 1844a33cd529c33b47e53b396057c0cca458ebf5
+SHA256: b01a3297de136b7350c33bf83dcbce5b7fbe6d3fcc115bc323ce780c23d88df9
+Description: GNU multiple precision arithmetic library
+
+Package: gnutls
+Version: 3.8.10-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: nettle, gmp
+Filename: pool/main/g/gnutls/gnutls_3.8.10-1_amd64.deb
+Size: 1794896
+MD5sum: f99417699b10260cd93a705eb8e3c326
+SHA1: 89d347dc0b69b7c35754f292d93b725fa1efa39c
+SHA256: d6ec021d32860076c594294612bc764e952aeb96384031974729230014dfe452
+Description: GNU TLS library
+
+Package: grep
+Version: 3.12-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libpcre2
+Filename: pool/main/g/grep/grep_3.12-1_amd64.deb
+Size: 159780
+MD5sum: cc71e4615aa3e28a838ee8d73cb48aff
+SHA1: a846b64c8c425d173daaa60ca7b41425fd2a06a0
+SHA256: 8c34ded8dad3f1950a737eac78b3b100d70b3fe8c00b41bbae4c487d1bfbde49
+Description: GNU grep
+
+Package: iproute2
+Version: 6.13.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/i/iproute2/iproute2_6.13.0-1_amd64.deb
+Size: 1010916
+MD5sum: 40479a30e801b798f29d18cd41b114f3
+SHA1: 9ef0440661f3339115dcc6cecf67a52a566f20ca
+SHA256: 3e5f6cfa9dfdb4b258b8eddbe8e84940df09b438b5d49e7979ffa4191aadf512
+Description: IP routing and network utilities
+
+Package: iputils
+Version: 20250605-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libcap2
+Filename: pool/main/i/iputils/iputils_20250605-1_amd64.deb
+Size: 198728
+MD5sum: 40096057c891ddfe1c6b093a5295cfa6
+SHA1: ad05a4d239201134f92f8d4ac041a4123507877f
+SHA256: 7d691685076e554ad6e55ab1d99a4fe106c4717803a0714ee395e93916b6d997
+Description: ping, arping, tracepath
+
+Package: kmod
+Version: 34.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/k/kmod/kmod_34.2-1_amd64.deb
+Size: 97076
+MD5sum: 734651231151fa7edf1cb582bda11a2d
+SHA1: 9a13cd7c5fe6b48551116966d835f85090554699
+SHA256: 7555f1b184bc542457e0f308f34f36c67e751a3df07f2ec0dffe9ee954eb7f5c
+Description: Kernel module tools
+
+Package: libcap2
+Version: 2.78-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libc/libcap2/libcap2_2.78-1_amd64.deb
+Size: 756
+MD5sum: 193d83ebf4da7053f0749c6cf00c179c
+SHA1: 9d81071600560c03e16a719eae8fd7b59e5f9c3a
+SHA256: 5aa92077ceccc81c397efcb87a4df2578a46b61f3cf0226d9debba13c05ce5a6
+Description: POSIX capabilities library
+
+Package: libedit
+Version: 3.1-20260512-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libe/libedit/libedit_3.1-20260512-1_amd64.deb
+Size: 109020
+MD5sum: 24042d7a11121120bd5ab6631db24edb
+SHA1: 6ba7ddc5136a04c8d5c94b66d7a0fa6bbdce888c
+SHA256: 7f35f275d745953dcbc3a517a3ec7c4e9018effabf8aee4783abf45758d35b6e
+Description: BSD editline library
+
+Package: libffi
+Version: 3.8.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libf/libffi/libffi_3.8.0-1_amd64.deb
+Size: 47472
+MD5sum: d1c8e1890cefd56a4408a9b6f9b055ce
+SHA1: 1ae32145a6b7f61f2c6a27268b925fa5a1f5deca
+SHA256: 1510f9f4568226e74603f379dbcf954a8db3d99953d87350be918146a1c1e5e5
+Description: Foreign function interface library (glib dependency)
+
+Package: libgcc
+Version: 16.2.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libg/libgcc/libgcc_16.2.1-1_amd64.deb
+Size: 1339288
+MD5sum: 18312a3d49584252bc5b7db72ca1515c
+SHA1: 9206478e3b62726c189c9b2ac47f99554ac379f7
+SHA256: e686492d9ff0a75851188a9830d212f2b1e021aeb11e3a14ea46d00cb954ceb3
+Description: GCC static support library (libgcc.a, static-link only)
+
+Package: libmnl
+Version: 1.0.5-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libm/libmnl/libmnl_1.0.5-1_amd64.deb
+Size: 10088
+MD5sum: c890e8f73bda0582f43c534b9b31276a
+SHA1: 1e26d4fdac1e984c54fa046fdbb2a64aedda66de
+SHA256: a14987ff658da8241f338fa7098454974a7aff33546156209e7ddc467c7d050f
+Description: Minimalistic Netlink library
+
+Package: libnftnl
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libmnl
+Filename: pool/main/libn/libnftnl/libnftnl_1.3.2-1_amd64.deb
+Size: 78208
+MD5sum: 04748c65578160dc8627a36b1cdd9884
+SHA1: ea849b1a5dfd27247b978547369b06024f905212
+SHA256: b95cc639a44e0f66c073728b30ea22c8416b0bedf48b5804239594026f94cfe2
+Description: nftables netlink library
+
+Package: libnl3
+Version: 3.12.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libn/libnl3/libnl3_3.12.0-1_amd64.deb
+Size: 376864
+MD5sum: f1f7a69e6d4a93320a13e75d2ef42eb7
+SHA1: a072bc27a899ab0cc18de08e40ed048aef6d8036
+SHA256: 2684215d492fc60c58bb4b03fbb68b138bcb8f59f7cdeb6d6c193994cfbf5ab0
+Description: Netlink socket library
+
+Package: libpcre2
+Version: 10.49-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libp/libpcre2/libpcre2_10.49-1_amd64.deb
+Size: 1061348
+MD5sum: 933b203c392724b0ec5a2f5bb49efd0d
+SHA1: 3c711e087085544be0963adb512215f3a41d39f2
+SHA256: b9c155ac2e2add5e3601daef51b3235981999fab59871c209058b1c8fc6f0dda
+Description: Perl-compatible regular expressions v2 library
+
+Package: libsystemd
+Version: 260.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libcap2, libzstd, xz, zlib
+Filename: pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb
+Size: 823380
+MD5sum: d1192cff67ac32a1f49b1ec0ce322a3b
+SHA1: 8297180e925ea46722cbde01b029a94e386f9e5e
+SHA256: 3973931f738d6c26743569a6e893bd020b0531a56b9348a6b897379dfc45fa51
+Description: systemd library (libsystemd)
+
+Package: libudev
+Version: 260.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libsystemd
+Filename: pool/main/libu/libudev/libudev_260.6-1_amd64.deb
+Size: 578212
+MD5sum: 41dc6b7823f644d6f7a5227f13226da3
+SHA1: 7303d1378fae5dfbd35c9a1c83f386f5e19c0ae2
+SHA256: e44aa7a27d1ed0bcc5c7d68960f707be2e890d4923730effcd6accc1e217ffaf
+Description: udev library (libudev)
+
+Package: libzstd
+Version: 1.5.7-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/libz/libzstd/libzstd_1.5.7-1_amd64.deb
+Size: 343388
+MD5sum: ea118c496f451035565c1cdaa781d2e2
+SHA1: 11991eb4400ba594cad2e71119900254b10f0d34
+SHA256: ffd585cb9ac33077936441601afda48d03df874138ab7dab9cd09b562e2c620d
+Description: Zstandard compression shared library
+
+Package: linux-firmware
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: linux-firmware-intel, linux-firmware-amd, linux-firmware-core, linux-firmware-extra
+Filename: pool/main/l/linux-firmware/linux-firmware_20260916-1_amd64.deb
+Size: 784
+MD5sum: a141827199e68f5ebe511d319f2a1b05
+SHA1: ff8fe3a82b78469dc1ab618ff0bb5b28662ee5a0
+SHA256: 79379e7537ee4b0fbc833f8e5fdf99c3cab1545c7b5be977a3a47c6f3beb2182
+Description: Linux Firmware Metapackage
+
+Package: linux-firmware-amd
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/l/linux-firmware-amd/linux-firmware-amd_20260916-1_amd64.deb
+Size: 19606724
+MD5sum: 1dee2c247c86b431f2bfb2b6c8946e5d
+SHA1: 5946bada348bcde91dadcda31c88a165e0e00c77
+SHA256: bd2d41d12cc6f951e5a27f08ec4aeb78ba0c8594e6e3a0854b566227d4ff05ca
+Description: AMD GPU Firmware
+
+Package: linux-firmware-core
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/l/linux-firmware-core/linux-firmware-core_20260916-1_amd64.deb
+Size: 52151588
+MD5sum: 76b24c7d341e405227a3c4c75a870dc6
+SHA1: cf9336a2d1e5948de7b0522a770bdd31646e5429
+SHA256: 4044ac6e18c779e8fdc8317e430ccd16f8eb07e9872f7f28e9b59f254e7dda40
+Description: Core WiFi/Ethernet Firmware
+
+Package: linux-firmware-extra
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/l/linux-firmware-extra/linux-firmware-extra_20260916-1_amd64.deb
+Size: 536566392
+MD5sum: 8307aa35d11a6903e5507d37ebde57db
+SHA1: f3810a0586bf4663a4f21c851f4355c91328edfb
+SHA256: 36e6453226d48ebfb319e5a95545de6950ef1ccd975c83505b610b98cb7fd30f
+Description: Additional Firmware
+
+Package: linux-firmware-intel
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/l/linux-firmware-intel/linux-firmware-intel_20260916-1_amd64.deb
+Size: 55866888
+MD5sum: 9d1c34a5e2e78320883f93ad368c9a5e
+SHA1: 5209c27f1226d8cc3392b1ec99ac9faf5827d351
+SHA256: c0efb6e37c0b0efa369b4feebf79081022cd1ff059620cbdfc30a38de683bd73
+Description: Intel WiFi/GPU/Audio Firmware
+
+Package: linux-image
+Version: 6.18.58-81manorg
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: kmod
+Recommends: linux-firmware
+Filename: pool/main/l/linux-image/linux-image_6.18.58-81manorg_amd64.deb
+Size: 47435664
+MD5sum: d53aac6274ec905bbfd828b8b80c7ab7
+SHA1: eacfdca775213e86e6e7868078d80a317a498914
+SHA256: e6d9711ec90dd560276f2e5635f6c210d1e29dff46e533f2a4c903d4eff782ee
 Section: kernel
 Priority: optional
-Homepage: https://www.kernel.org/
-Description: Linux kernel headers for 6.12.74lts-81manorg on amd64
- This package provides kernel header files for 6.12.74lts-81manorg on amd64
- .
- This is useful for people who need to build external modules
+Description: Linux 6.18.58-81manorg kernel image and modules
 
-Package: linux-lts
-Source: linux-upstream
-Version: 6.12.74-13
+Package: linux-pam
+Version: 1.7.3-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Installed-Size: 2208480
-Filename: pool/main/l/linux-lts/linux-image-6.12.74lts-81manorg-dbg_6.12.74-13_amd64.deb
-Size: 374059900
-MD5sum: e3251aef2b6be228943cb138c5bbfb3c
-SHA1: 3be9ad3b9733ffe5ac4ab112d9e1c3f7a2ca3ccd
-SHA256: b1b2ecc8c79bc2fa52123897a282a45396c23e4a31e41a9b26fbe173506cd4e3
-Section: debug
-Priority: optional
-Homepage: https://www.kernel.org/
-Description: Linux kernel debugging symbols for 6.12.74lts-81manorg
- This package will come in handy if you need to debug the kernel. It provides
- all the necessary debug symbols for the kernel and its modules.
+Depends: musl
+Filename: pool/main/l/linux-pam/linux-pam_1.7.3-1_amd64.deb
+Size: 661468
+MD5sum: 98bb0e442cf332567d3c4866390f564f
+SHA1: 74039ffb5e40903d9cf3578c9a8049cdec536c8b
+SHA256: 23d06af60f1fc3040805f737dcf0da5487657f955a9d59b10e4df68e1644a14b
+Description: Linux Pluggable Authentication Modules
 
-Package: linux-lts-libc-dev
-Source: linux-upstream
-Version: 6.12.74-13
+Package: mkbootrd
+Version: 2.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Installed-Size: 7191
-Provides: linux-kernel-headers
-Filename: pool/main/l/linux-lts-libc-dev/linux-libc-dev_6.12.74-13_amd64.deb
-Size: 1395580
-MD5sum: 8e29e2403209dcf3e954614bde17e31b
-SHA1: b11014e6d34c3d50929155e1471e98791db254b0
-SHA256: 05f8ff9f3bd89914978655c94d38fb4af2a0dc7e09fedbcd141567eb0a22f168
-Section: devel
-Priority: optional
-Multi-Arch: same
-Homepage: https://www.kernel.org/
-Description: Linux support headers for userspace development
- This package provides userspaces headers from the Linux kernel.  These headers
- are used by the installed headers for GNU glibc and other system libraries.
+Depends: bash, busybox, coreutils, findutils, gawk, kmod, musl, systemd-udev, util-linux-gnu
+Filename: pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb
+Size: 5372
+MD5sum: 17372cbae21a0e5293532dcd9bc19d27
+SHA1: 0356654ad7c16cbd426067d2900a99dbc8a467ce
+SHA256: 167dc826397c2b5338f06082fb0dc508168057d5dd488912cfdb49603430ea6b
+Description: Advanced initramfs builder for 81manorg Linux
 
 Package: musl
-Version: 1.2.5-1
+Version: 1.2.6-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Installed-Size: 4672
-Filename: pool/main/m/musl/musl_1.2.5-1_amd64.deb
-Size: 655632
-MD5sum: a2bc171bd2fd66f78fd7dc898536090b
-SHA1: 955383bad5a4ed2cd078a990663d94c11fcfb17a
-SHA256: dc8ba9d8f15d18c490fa9fa3fff7f3ec982bf2533e7765e1e58e7a999818f547
-Section: libs
-Priority: required
-Description: musl C library
- musl is a lightweight, fast, simple C library for Linux.
- .
- This package contains the musl C runtime libraries and headers,
- required by all programs linked against musl.
+Filename: pool/main/m/musl/musl_1.2.6-1_amd64.deb
+Size: 510024
+MD5sum: e2c4e71f4e8f72259436b709aaf7db5f
+SHA1: 98b6dee225929419f57c304c7ee194bb715157dc
+SHA256: cbaf7955c53f5548e23ea8b0a1adc6d71e5178cdb02728fce9dc051ff8ad6cf1
+Description: The musl C library (target rootfs)
+
+Package: nano
+Version: 9.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: ncurses
+Filename: pool/main/n/nano/nano_9.2-1_amd64.deb
+Size: 263308
+MD5sum: ba3c4d897f482c8c25951cff0dd4aaa5
+SHA1: 41a991c1817f7303c82bffcbdc288b42d0279131
+SHA256: cd4f35d7bc8532a57b0229b7dc1b08fa94006a82da05bc4668ddd303944e008d
+Description: GNU nano text editor
+
+Package: ncurses
+Version: 6.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/n/ncurses/ncurses_6.6-1_amd64.deb
+Size: 640060
+MD5sum: babf164fc9d5e78bb166e3ee8d4bd4de
+SHA1: 9b07b526b64d37241b02497048cbf6c48330b654
+SHA256: b6c878bbb9b3d38f22f3c81ec9a7f9827677a3d7a44fbee1cce05d93f2c89097
+Description: Terminal handling library
+
+Package: net-tools
+Version: 2.10-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/n/net-tools/net-tools_2.10-1_amd64.deb
+Size: 144368
+MD5sum: 7e7111cb4390b9fd11dcb1527a6413bc
+SHA1: 95711eb938e8199d6a031c4a9c5237e7cb6ffb51
+SHA256: 7660ed8290125d4b338a1c5d292eef10143497d5d5bc8dc7bd569384816573b1
+Description: Classic network tools
+
+Package: nettle
+Version: 3.10.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: gmp
+Filename: pool/main/n/nettle/nettle_3.10.1-1_amd64.deb
+Size: 895276
+MD5sum: e98bfc800c37354b1afd8199630685eb
+SHA1: 7b1b9dc0109aa59b18c5534757cc9f74dcd102aa
+SHA256: 0ee9aac32c90c41df5d117b4da6cfee96da6ac82a53f25f7b405022bbc8078f7
+Description: Low-level cryptographic library
+
+Package: nftables
+Version: 1.1.7-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libmnl, libnftnl
+Filename: pool/main/n/nftables/nftables_1.1.7-1_amd64.deb
+Size: 1098548
+MD5sum: 90fd2dcb998e70054d45066078c30301
+SHA1: 94b5fc0465c028577652d092dddb2ff5ffcb8bb7
+SHA256: 66a3cde4e6a5914bd27a489204e413f972f8da418d0a783eca902d0d49226f39
+Description: nftables packet filtering framework
+
+Package: openrc
+Version: 0.64.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/o/openrc/openrc_0.64.1-1_amd64.deb
+Size: 551964
+MD5sum: 19088148ae7bd6b686d49a8e148c4722
+SHA1: 0943cae699fe765e1182307d93ce62eadb08e494
+SHA256: 725e431dd318e4276e64cefeeb08fbcb74076dfcc5cdc11782276c9a7a1efaeb
+Description: OpenRC init system (with 81manorg service scripts)
+
+Package: openrc-sysvcompat
+Version: 0.64.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: openrc
+Filename: pool/main/o/openrc-sysvcompat/openrc-sysvcompat_0.64.1-1_amd64.deb
+Size: 880
+MD5sum: 7b5a84ec12cbf364110c5851f68c9829
+SHA1: 294083dc4ad37042e7548b3d532ff01bc30adce5
+SHA256: 78c9278996684011a68ff2dd2907c74546ca33826ab4a46508b03358c1694b7d
+Description: SysV-compatible init symlinks
+
+Package: openssl
+Version: 3.6.5-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: zlib, ca-certificates
+Filename: pool/main/o/openssl/openssl_3.6.5-1_amd64.deb
+Size: 5304244
+MD5sum: db3261cef14562a8c3959b7df0d9e59e
+SHA1: f4c7a27f699a585432172b691bc091693e937fb2
+SHA256: 7b9e5f25be5387270e835888832ab6277b801a0d2e2b52a7d5a5f075a4c4f013
+Description: OpenSSL cryptography library
+
+Package: procps
+Version: 0.0.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/p/procps/procps_0.0.1-1_amd64.deb
+Size: 477288
+MD5sum: a87313916579b901ec86cd9a9420ea2e
+SHA1: 2ec14c8719442c16ef6a6f3834c1061b466efe46
+SHA256: 9ea2b59aa53c094bf51a445397f1da5c8fd8a8ed53be84c99de4196c0349379c
+Description: Rust procps (ps, top, free, pgrep, ...)
+
+Package: procps-gnu
+Version: 4.0.7-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: ncurses, libcap2
+Filename: pool/main/p/procps-gnu/procps-gnu_4.0.7-1_amd64.deb
+Size: 160748
+MD5sum: 81a2a9fdd591f4234e92db401b019fbc
+SHA1: 9d2309ef7ceacbaf44f2e2e3cab343b971e2da70
+SHA256: 0ccada830d777f61e803707eb0bec528d14c8c4c64bdefec0d3a92aa174189d6
+Description: GNU procps (kill, killall, pstree)
+
+Package: pv
+Version: 1.12.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/p/pv/pv_1.12.0-1_amd64.deb
+Size: 125596
+MD5sum: e8519a8c6a852b6ec415659e51767e95
+SHA1: 58c013749f9d0cdace14b0a28ab08c97442b8351
+SHA256: 62377964d17725bb76602f57c3fac13e51e0f6e44ee211a07e4d3c83b1b0cb8d
+Description: Pipe Viewer - progress bar for pipes
+
+Package: readline
+Version: 8.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: ncurses
+Filename: pool/main/r/readline/readline_8.3-1_amd64.deb
+Size: 315140
+MD5sum: 9ace0bdf19a3bd49ac95607df7a90079
+SHA1: 99c5a0ee378cbf63e66d07e3e3a45abbb14c09ae
+SHA256: 76bdcd6260c518d35d471db28bd29ce0fff02303a0ee25134bc1b02165c5fbf4
+Description: GNU readline library
+
+Package: sed
+Version: 4.10-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/s/sed/sed_4.10-1_amd64.deb
+Size: 149564
+MD5sum: ed682260e18a5cc3b6bf693a0fffa4b7
+SHA1: ec25d6064020ec3d95d8594454ad7ad56003b3ec
+SHA256: 65cbd7a35253dd5480b1b6238d937bf08f0c304c7371e0f367fe4d3f089ff580
+Description: GNU sed
+
+Package: shadow
+Version: 0.2.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/s/shadow/shadow_0.2.1-1_amd64.deb
+Size: 994556
+MD5sum: 1adc4fb39aad8cfd5e6ac304ecbb28db
+SHA1: 0729880d63457621018cfebeda624db451c487a7
+SHA256: fc99d04921665efbbab731e834496a002c439c42faa5fa8306d420dde40769d3
+Description: Rust shadow (user and group management)
+
+Package: shadow-gnu
+Version: 4.20.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: linux-pam, elogind
+Filename: pool/main/s/shadow-gnu/shadow-gnu_4.20.3-1_amd64.deb
+Size: 186808
+MD5sum: 41d21ef079553ec6f7127dcaa6ca98e6
+SHA1: 403d9b54e9f3a622a97eb23b5d06a1a94013954c
+SHA256: 291f4cc67959444fe2ae72a32c9b111fbc7929dc0df1aa5ab247bf68fc455c91
+Description: GNU shadow (the PAM tools: passwd, chfn, chsh, login, expiry, chage)
+
+Package: systemd-udev
+Version: 260.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: kmod, libcap2, libzstd, libsystemd, libudev
+Filename: pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb
+Size: 2575480
+MD5sum: 4603f030ce063de0ae6f42f4b61aa52c
+SHA1: f0800e5b7fe2570b2cea3517e78f5bfcc71a2f4d
+SHA256: 8bb11a87a63590315920f8c826a86c5e911d25580c91f9cfa0e819eb9e547045
+Description: Standalone udev device manager
+
+Package: tar
+Version: 1.35-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/t/tar/tar_1.35-1_amd64.deb
+Size: 749308
+MD5sum: 364831df5551e9e9f6b492d6dc5e1069
+SHA1: bfe8ac308c0dba4767cf6267e34c053d059fea40
+SHA256: 56aa0ac8c79b9db31ac578619ada1b68682f7bee34e5ef9564d8804026b3450c
+Description: GNU tar
+
+Package: util-linux
+Version: 0.0.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/u/util-linux/util-linux_0.0.1-1_amd64.deb
+Size: 902936
+MD5sum: 0fed52c3b0b6977fc0d498888c6ed563
+SHA1: b1944f1bd0eee2f58c34c0ce933236cf93fffc3d
+SHA256: 751c685199d77a3c5250155c73e288a7bddd7fe152879655a2ce7e4b6912008c
+Description: Rust util-linux
+
+Package: util-linux-gnu
+Version: 2.42.4-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: libcap2, zlib
+Filename: pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb
+Size: 2292748
+MD5sum: abfe96a54b756cb824fa49e29d2d8cff
+SHA1: c9e75617b0976739b9e8b67ce9e5bf4f6212c239
+SHA256: 8ef9162c1bb9722056d8fbaa740aa3b1759977536d94653500427c1acf3c89d5
+Description: GNU util-linux (libmount and the tools the Rust port does not cover)
+
+Package: wpa-supplicant
+Version: 2.12-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: openssl, libnl3
+Filename: pool/main/w/wpa-supplicant/wpa-supplicant_2.12-1_amd64.deb
+Size: 772
+MD5sum: bf383a703dff2f56320b89ad3547defa
+SHA1: 3a91fdc674dba0b0d4ce8f068a42aa285359e818
+SHA256: 67e5c2a99354b31626989abb6e376ca66f768afedb0f488c4a13b72f0295db9c
+Description: WPA/WPA2/WPA3 supplicant
+
+Package: xz
+Version: 5.8.4-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/x/xz/xz_5.8.4-1_amd64.deb
+Size: 277168
+MD5sum: 17a6ac4e0bc96b2350e7a05b97954b05
+SHA1: 8b37fd41cd1dc5f10093fcbb14cdc6a46ffbf3ff
+SHA256: 622abe6cee9505c473707c2bb4c76eac7e6ff64f64c04145d68d7a02dd952816
+Description: XZ compression tools and liblzma
+
+Package: zlib
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/z/zlib/zlib_1.3.2-1_amd64.deb
+Size: 80916
+MD5sum: 55632d759230b18897f154b06bc0cfc4
+SHA1: ddec2ac70f3e0036469e9a05c5db663badd7745e
+SHA256: ed11818f63a61ad334fcc12bcebb4ae446d112356eb7aacb3c175d6b808f275e
+Description: zlib compression shared library
+
+Package: zsh
+Version: 5.9.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: ncurses, libcap2, libpcre2
+Filename: pool/main/z/zsh/zsh_5.9.2-1_amd64.deb
+Size: 2144956
+MD5sum: 569489c459da5899d2b70d155c4d9c0e
+SHA1: 58912d06311062f995c790eecc75c487bf09f9c2
+SHA256: 9deab61ea04a6fec5ca1252e8f9b07953a64ba029677425411df07538c8696a8
+Description: Z Shell
 
