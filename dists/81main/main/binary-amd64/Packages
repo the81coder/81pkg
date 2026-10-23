@@ -25,12 +25,12 @@ Package: base
 Version: 1.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Depends: busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, connman, dbus, 81pkg, linux-pam, elogind, bash-completion
+Depends: busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, dbus, 81pkg, linux-pam, elogind, bash-completion
 Filename: pool/main/b/base/base_1.0-1_amd64.deb
-Size: 856
-MD5sum: af1cb571039699da24ef461aeb80f374
-SHA1: 65fea5a912b55bde6f5af376e9963a8d4e6bccc6
-SHA256: 86a42915ca0beab593f5a2bdc5e30eaf1958752bf4eb7db2b0b0a1aa65807157
+Size: 852
+MD5sum: 9aa80d1a132a9f873a8c631516398eda
+SHA1: 9efbe7549932f212f2b42bd786dc8c4271f85781
+SHA256: 867b71a7f9d8a519184569c13569c9e3cc4750098a6001b5ea7041e5520a6af8
 Description: 81manorg Base System (meta)
 
 Package: bash
