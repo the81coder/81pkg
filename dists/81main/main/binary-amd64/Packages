@@ -141,10 +141,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: linux-pam
 Filename: pool/main/e/elogind/elogind_257.16-1_amd64.deb
-Size: 5409672
-MD5sum: af70cab9232ae320476c9ec9f59fba39
-SHA1: 4ef8addb874afd5f4aeea9857a4f1aa4781f6cf9
-SHA256: 2f3c6e98f2c92e5bd082093e20ded6b50369c0e9b3e271c4a9f8cfb2896ab145
+Size: 5406504
+MD5sum: 2bc0864b8427e1f8ad7b1bdf6bca3c89
+SHA1: 3c706a632654e397cbacd093d36ce77d8b10492e
+SHA256: 47598b24ffe18b23e1cef69f4e922246a268457faecbfd7bc77596b6dd742234
 Description: elogind session/login manager (standalone logind fork)
 
 Package: expat
@@ -379,10 +379,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libcap2, libzstd, xz, zlib
 Filename: pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb
-Size: 823380
-MD5sum: d1192cff67ac32a1f49b1ec0ce322a3b
-SHA1: 8297180e925ea46722cbde01b029a94e386f9e5e
-SHA256: 3973931f738d6c26743569a6e893bd020b0531a56b9348a6b897379dfc45fa51
+Size: 822512
+MD5sum: 455554eed736a0a1d0a3cb98706f7023
+SHA1: 368201eed8752de523b9e6eea7c79c57ef39406c
+SHA256: 40e9fe15e5a196b2c7d461eafab99337d3a2eb4d32f375722119f51ae0464567
 Description: systemd library (libsystemd)
 
 Package: libudev
@@ -391,10 +391,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libsystemd
 Filename: pool/main/libu/libudev/libudev_260.6-1_amd64.deb
-Size: 578212
-MD5sum: 41dc6b7823f644d6f7a5227f13226da3
-SHA1: 7303d1378fae5dfbd35c9a1c83f386f5e19c0ae2
-SHA256: e44aa7a27d1ed0bcc5c7d68960f707be2e890d4923730effcd6accc1e217ffaf
+Size: 578136
+MD5sum: 7bf8e33d8b25700de0ef017026f8ba28
+SHA1: 5583bb3391baea76ea40faa361065287cb61ec5c
+SHA256: 3b3257c214605a09c081f749126d0f54111f06b232230606a4441c66b5816d9d
 Description: udev library (libudev)
 
 Package: libzstd
@@ -693,10 +693,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: kmod, libcap2, libzstd, libsystemd, libudev
 Filename: pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb
-Size: 2575480
-MD5sum: 4603f030ce063de0ae6f42f4b61aa52c
-SHA1: f0800e5b7fe2570b2cea3517e78f5bfcc71a2f4d
-SHA256: 8bb11a87a63590315920f8c826a86c5e911d25580c91f9cfa0e819eb9e547045
+Size: 2576632
+MD5sum: e169a509caa48fbc2f6cf4a9d5278ca0
+SHA1: 301f77675882b0b4f5588517dea516264134c7a9
+SHA256: 6778dd8d27bb74f5f0ee6e105fa0a1c4031645743afa4aa5bc4c7d4356b74ece
 Description: Standalone udev device manager
 
 Package: tar
@@ -727,10 +727,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libcap2, zlib
 Filename: pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb
-Size: 2277064
-MD5sum: 67af176386b6982134b115db9d6082a0
-SHA1: 19af85405dc2cc45fba852c90ae64d07098f0193
-SHA256: d535ecd87d4193f864e4dda78b180cb0fcede13cc30c91b5e794536b3fa70b34
+Size: 2238384
+MD5sum: 36ab9ffe197690f9fdd32bfeb8cdc456
+SHA1: 6b2f070cd9c0a5f2c3e294bfe933fcb8e09af4a3
+SHA256: 0b510c9f6779eaf715b21ffa3b3be4bcf8f12c7b4e46dcc7628da6fab2f01154
 Description: GNU util-linux (libmount and the tools the Rust port does not cover)
 
 Package: wpa-supplicant
