@@ -39,10 +39,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: musl, readline, ncurses
 Filename: pool/main/b/bash/bash_5.3-2_amd64.deb
-Size: 1711836
-MD5sum: bb092c6d670fc232c40295839f7e280f
-SHA1: 3ff32e9c03b7634e040a0aca7920d94d52940936
-SHA256: f2a3afc7b15b3178822dc553213a359ab7811124fdc3f7790e3b3a30f25e7ae4
+Size: 1711572
+MD5sum: 9a1af9c854940b0d5a8287177e1aaf44
+SHA1: 9ddbbc090bc156e4c95dc2f4e8f141c25dc51a29
+SHA256: 46d4ab41a5530c14c21fa9954cda9db1a677c9b5a54c5cd85c654d243f1d5eb6
 Description: GNU Bourne-Again Shell
 
 Package: bash-completion
@@ -185,10 +185,10 @@ Version: 5.4.1-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/g/gawk/gawk_5.4.1-1_amd64.deb
-Size: 1297940
-MD5sum: 98b1ac50ef9370c659915c20057fcde9
-SHA1: c86ec17ed9a8f2278e0f1ee4bf2aaef814c9ae2b
-SHA256: 2ee42fc49e95ee8406f2dc08dc2e1bb20d83de9e9e69ff624a001d6f4e667934
+Size: 1297944
+MD5sum: 90b785ee387d145b0dc8ead3d4024211
+SHA1: 37d2e80daea5a0e2443a37ac8486676e45ef6c2b
+SHA256: 9cf263f227e6e3b5b2aa8e6d8a43ec75849d959e28e406c3b0a776da938934bb
 Description: GNU awk
 
 Package: genfstab
@@ -220,10 +220,10 @@ Version: 6.3.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/g/gmp/gmp_6.3.0-1_amd64.deb
-Size: 344748
-MD5sum: b1dd7ad8d3a04480df0e5f61746585bf
-SHA1: 1844a33cd529c33b47e53b396057c0cca458ebf5
-SHA256: b01a3297de136b7350c33bf83dcbce5b7fbe6d3fcc115bc323ce780c23d88df9
+Size: 344220
+MD5sum: a97373ea3d4b2f7ee442cad06d8b1757
+SHA1: 7e45ab15933139bb2675c873df1140667a72bf4b
+SHA256: 36ae03f90130373bf1ea5b3ef3e18ab0a8f232dfbc90a9039936f747d46f7f82
 Description: GNU multiple precision arithmetic library
 
 Package: gnutls
@@ -232,10 +232,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: nettle, gmp
 Filename: pool/main/g/gnutls/gnutls_3.8.10-1_amd64.deb
-Size: 1794896
-MD5sum: f99417699b10260cd93a705eb8e3c326
-SHA1: 89d347dc0b69b7c35754f292d93b725fa1efa39c
-SHA256: d6ec021d32860076c594294612bc764e952aeb96384031974729230014dfe452
+Size: 1795668
+MD5sum: 0dc00398589baac58896f77e5c3995a1
+SHA1: fac321bfeb6538c3ff15754c9452f7e1f5ad9d9e
+SHA256: 831835b81c6b279ac51a5b264e942deeca5a0000810cbbee1908efed0530c651
 Description: GNU TLS library
 
 Package: grep
@@ -244,10 +244,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libpcre2
 Filename: pool/main/g/grep/grep_3.12-1_amd64.deb
-Size: 159780
-MD5sum: cc71e4615aa3e28a838ee8d73cb48aff
-SHA1: a846b64c8c425d173daaa60ca7b41425fd2a06a0
-SHA256: 8c34ded8dad3f1950a737eac78b3b100d70b3fe8c00b41bbae4c487d1bfbde49
+Size: 159628
+MD5sum: 11a9e1dd2f02a678cc5c5b2d47b93556
+SHA1: 0a2c5f96c60935bec01c3fd86e07a40b9256843f
+SHA256: 09c20425ee7c6c523aaeb29945774b24d7875c33515838f0be4007915ae3b13c
 Description: GNU grep
 
 Package: iproute2
@@ -311,10 +311,10 @@ Version: 3.8.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/libf/libffi/libffi_3.8.0-1_amd64.deb
-Size: 47472
-MD5sum: d1c8e1890cefd56a4408a9b6f9b055ce
-SHA1: 1ae32145a6b7f61f2c6a27268b925fa5a1f5deca
-SHA256: 1510f9f4568226e74603f379dbcf954a8db3d99953d87350be918146a1c1e5e5
+Size: 47264
+MD5sum: 950274e88ce2a763d57013674cac949e
+SHA1: f7bab4d035c0c899fbed8a3e545f367bbfdcfbf7
+SHA256: 5dfbcc90754b5d02443620a6d9d7984371d5b575949922d3813d41a8e57ef4b8
 Description: Foreign function interface library (glib dependency)
 
 Package: libgcc
@@ -520,10 +520,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: ncurses
 Filename: pool/main/n/nano/nano_9.2-1_amd64.deb
-Size: 263308
-MD5sum: ba3c4d897f482c8c25951cff0dd4aaa5
-SHA1: 41a991c1817f7303c82bffcbdc288b42d0279131
-SHA256: cd4f35d7bc8532a57b0229b7dc1b08fa94006a82da05bc4668ddd303944e008d
+Size: 263204
+MD5sum: 70360c2007f6693fff3da66fdf1b1d3e
+SHA1: 5a3fd8f61e239d56a70f4c68ae973cf157f88656
+SHA256: cbaab29213a83d4e86f140eab6a0eede35d2d3fcee498d626f5049edb31b2477
 Description: GNU nano text editor
 
 Package: ncurses
@@ -554,10 +554,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: gmp
 Filename: pool/main/n/nettle/nettle_3.10.1-1_amd64.deb
-Size: 895276
-MD5sum: e98bfc800c37354b1afd8199630685eb
-SHA1: 7b1b9dc0109aa59b18c5534757cc9f74dcd102aa
-SHA256: 0ee9aac32c90c41df5d117b4da6cfee96da6ac82a53f25f7b405022bbc8078f7
+Size: 895052
+MD5sum: 6ced5f70cf8a7b90aa67b86f7201873a
+SHA1: 3c2e49afd37e275d49e3d7d302f00f6a3e9ce478
+SHA256: c3bbc56f400a3574d5dc988548679b8dbcd69144d72590fc1db4f6103aec9754
 Description: Low-level cryptographic library
 
 Package: nftables
@@ -647,10 +647,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: ncurses
 Filename: pool/main/r/readline/readline_8.3-1_amd64.deb
-Size: 315140
-MD5sum: 9ace0bdf19a3bd49ac95607df7a90079
-SHA1: 99c5a0ee378cbf63e66d07e3e3a45abbb14c09ae
-SHA256: 76bdcd6260c518d35d471db28bd29ce0fff02303a0ee25134bc1b02165c5fbf4
+Size: 314924
+MD5sum: 85b9bd1ae99dc690bd45e8a3b66b9f03
+SHA1: 0e0275f9be50f178282db6a992621099870f3d5d
+SHA256: 42003183e9194d7c1fb2e2148a5437f4a72b83fba8e072290281a80b2031c21f
 Description: GNU readline library
 
 Package: sed
@@ -658,10 +658,10 @@ Version: 4.10-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/s/sed/sed_4.10-1_amd64.deb
-Size: 149564
-MD5sum: ed682260e18a5cc3b6bf693a0fffa4b7
-SHA1: ec25d6064020ec3d95d8594454ad7ad56003b3ec
-SHA256: 65cbd7a35253dd5480b1b6238d937bf08f0c304c7371e0f367fe4d3f089ff580
+Size: 149376
+MD5sum: 617f2ca0c5e5fdc761f2fecdfedaaf57
+SHA1: 5f6a436b9c415a5725565ce7430c095e199df0d4
+SHA256: a635cbc6479ecb5c31e3f1cd5035f1e706cc9bdac78ba4fe68953ab0aa2a9dfd
 Description: GNU sed
 
 Package: shadow
@@ -704,10 +704,10 @@ Version: 1.35-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/t/tar/tar_1.35-1_amd64.deb
-Size: 749308
-MD5sum: 364831df5551e9e9f6b492d6dc5e1069
-SHA1: bfe8ac308c0dba4767cf6267e34c053d059fea40
-SHA256: 56aa0ac8c79b9db31ac578619ada1b68682f7bee34e5ef9564d8804026b3450c
+Size: 749048
+MD5sum: a91437e62b0cc0324415a80adca058da
+SHA1: 8ba19eab0b530747c12d56327ba1406e67231a88
+SHA256: 4dca96372a256d4a70432fff2fdef594082524bf1b192aa8446faf9e8a8954e8
 Description: GNU tar
 
 Package: util-linux
