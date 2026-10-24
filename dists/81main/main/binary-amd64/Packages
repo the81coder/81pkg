@@ -39,10 +39,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: musl, readline, ncurses
 Filename: pool/main/b/bash/bash_5.3-2_amd64.deb
-Size: 1713464
-MD5sum: 328e1b3c2bbbbf710989a09d9c47b69a
-SHA1: b75cb742bf2fc53dcafd4d2a214dd6ffcfd304e8
-SHA256: 208b29072fb9f15bd046516142480d2d479e0c3c8338452c3f33261999f34d89
+Size: 1712420
+MD5sum: 795e98ff1db20528e555bc191c42489c
+SHA1: 21e53cc31dc95538502235a3ea28ef75ee4f33f1
+SHA256: 82e9cc7c9d54d467a06c77353560ac66d949cd44ffa821efb3defa78ca1f3544
 Description: GNU Bourne-Again Shell
 
 Package: bash-completion
