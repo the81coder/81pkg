@@ -25,12 +25,12 @@ Package: base
 Version: 1.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Depends: busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, dbus, 81pkg, sed, linux-pam, elogind, bash-completion
+Depends: filesystem, busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, dbus, 81pkg, sed, gzip, linux-pam, elogind, bash-completion, openssl, curl, e2fsprogs, kbd
 Filename: pool/main/b/base/base_1.0-1_amd64.deb
-Size: 904
-MD5sum: 774bbecc728d10ec2ab9a8cc2879fe52
-SHA1: df67bcb45604f31af7ec50b97aa2754865677115
-SHA256: 47e4a61518cc70ff24005f05790371fa198de41f7996cf8eb513b9298c98bcd5
+Size: 936
+MD5sum: b8b3239499b08dfceb75691983c81a21
+SHA1: fe9b677ae4353ddd7ae50686a0bc747c9d1f5e52
+SHA256: 600d922952d8dd602826cb1e7daafbf53413bc4ab8328246bcb700ca05683aa3
 Description: 81manorg Base System (meta)
 
 Package: bash
@@ -124,6 +124,17 @@ SHA1: e92c6278e0a65cb46f9ac3e4bd14b07eb1ff95ba
 SHA256: 3fbaa0781a66b0b8be8c93e90872124ba35d5ece57d09b6b0c049f8a23b19161
 Description: D-Bus message bus
 
+Package: device-mapper
+Version: 2.03.41-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/d/device-mapper/device-mapper_2.03.41-1_amd64.deb
+Size: 270028
+MD5sum: 4571497548abca6f02c538296e6bb75c
+SHA1: 05eb89eeb42f68c11e7781f31c2d115526e52a10
+SHA256: 5c40991894a9c6713d50aa1bd038445642b9a4fc2b91f4c45dcb0f0e7ea976da
+Description: Device mapper userspace library (libdevmapper) and dmsetup
+
 Package: diffutils
 Version: 0.5.0-1
 Architecture: amd64
@@ -135,16 +146,39 @@ SHA1: 84eb6a2feb70072e6c1ccf09ac6954af6f139e6c
 SHA256: 11bac435b233105926d04fc45c50e3e43a90c6e18687b64d69d6282d9b389b0c
 Description: Rust diffutils (diff, cmp)
 
+Package: dosfstools
+Version: 4.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/d/dosfstools/dosfstools_4.2-1_amd64.deb
+Size: 128800
+MD5sum: 36187abe215d6e8c1f9531137880ef59
+SHA1: 0cd2589816467ad060bd78a916a557e023cf9d42
+SHA256: 9b54b2cb1e7500feeabcf3e82aa7c4e6bd2634bbf2437caa17f11504744ec781
+Description: MS-DOS FAT filesystem utilities (mkfs.fat, fsck.fat)
+
+Package: e2fsprogs
+Version: 1.47.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: util-linux-gnu
+Filename: pool/main/e/e2fsprogs/e2fsprogs_1.47.3-1_amd64.deb
+Size: 760268
+MD5sum: 32333a296e1a7ed46b857f5fa25c0232
+SHA1: 60a2b5f650800ccffa565cc820681922b863d89c
+SHA256: bbf5279dafbdeac7a545c8b0dd165ef93edacb087692ec7d0795b509febb2f6d
+Description: Ext2/3/4 filesystem utilities (e2fsck, mke2fs, tune2fs)
+
 Package: elogind
 Version: 257.16-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: linux-pam
 Filename: pool/main/e/elogind/elogind_257.16-1_amd64.deb
-Size: 5406504
-MD5sum: 2bc0864b8427e1f8ad7b1bdf6bca3c89
-SHA1: 3c706a632654e397cbacd093d36ce77d8b10492e
-SHA256: 47598b24ffe18b23e1cef69f4e922246a268457faecbfd7bc77596b6dd742234
+Size: 5408888
+MD5sum: c293ec2ec29519a96d461bee940d04fc
+SHA1: 67650ffe991e6bdb02c81331e58de6241b571cce
+SHA256: 5f8a5d736238a7e0f44a9515ce704a7b316df9bfc00fa3c390dab5a62291d420
 Description: elogind session/login manager (standalone logind fork)
 
 Package: expat
@@ -159,14 +193,14 @@ SHA256: 6b86edaf8cd50fe7dea750fb50f155da70f3f261a5835290889a3b7646913b2a
 Description: XML parsing library (dbus dependency)
 
 Package: filesystem
-Version: 1.0-1
+Version: 1.0-2
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
-Size: 908
-MD5sum: 66cc7873b6b097e9424ac4cc813a46fd
-SHA1: 4af3854aec90adb75559889945610be62b3ec62d
-SHA256: 6f954f106e7ea072786e4a5fef19f147fbd0c3848e2e1b68ef201eaac015a40f
+Filename: pool/main/f/filesystem/filesystem_1.0-2_amd64.deb
+Size: 1820
+MD5sum: 2c7f9a1b7c406a59f6d088c65c1cffdd
+SHA1: e6b29dfa428499214b86dbcdcf87a92c932054bd
+SHA256: 588b55c3e7d19b4013974d1edf88291814f3cf66fbb887a41f1f842028f4f2ff
 Description: 81manorg base directory layout
 
 Package: findutils
@@ -250,6 +284,65 @@ SHA1: 0a2c5f96c60935bec01c3fd86e07a40b9256843f
 SHA256: 09c20425ee7c6c523aaeb29945774b24d7875c33515838f0be4007915ae3b13c
 Description: GNU grep
 
+Package: grub
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: grub-common, grub-bios, grub-efi-x86-64
+Filename: pool/main/g/grub/grub_2.14-1_amd64.deb
+Size: 836
+MD5sum: cca3e599b1a4c4ff52ddd9aac1ccba5c
+SHA1: ebcf5c699e102481212db92b139a156a833f5abf
+SHA256: 7927fedd5a34793aed1539bb8b539dd010c738fce22f14fe2050973dc6eaff52
+Description: GRUB bootloader (metapackage)
+
+Package: grub-bios
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: grub-common
+Filename: pool/main/g/grub-bios/grub-bios_2.14-1_amd64.deb
+Size: 5122468
+MD5sum: 7633c488a1dddd9c3a346b8283b13b4e
+SHA1: 9f346c7b508debc68d660ecfe47c26b2923304ee
+SHA256: aac4e148b71ecec8050f3bf14b98ab6b83554c8dc2ca35d785dca9fdae4cf473
+Description: GRUB modules and BIOS setup (i386-pc)
+
+Package: grub-common
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: device-mapper, xz, os-prober, util-linux-gnu
+Filename: pool/main/g/grub-common/grub-common_2.14-1_amd64.deb
+Size: 1802232
+MD5sum: 2a727994727d3ac34c517c7301ed3fc2
+SHA1: 9e01d6779d05d26d9f3568f3a42e618f96c23eb1
+SHA256: 48a46e9458d15898243c4a8d90e26574ad94fa7460f9b8d768018108e78bca82
+Description: GRUB common tools: grub-install, grub-mkconfig, grub-probe
+
+Package: grub-efi-x86-64
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: grub-common
+Filename: pool/main/g/grub-efi-x86-64/grub-efi-x86-64_2.14-1_amd64.deb
+Size: 836
+MD5sum: 61092acf70d3466ac6cc283d3928d078
+SHA1: 18cd9a6d8055ed0e96ee2dc9de52a0a5c42e9e00
+SHA256: ff1ad52b632aa5d00f3b157075ac977cd8b1c945514a078ea06630cc377b5309
+Description: GRUB modules for 64-bit UEFI (x86_64-efi)
+
+Package: gzip
+Version: 1.15-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/g/gzip/gzip_1.15-1_amd64.deb
+Size: 89548
+MD5sum: 2b9aa01599e413dabdb159fdcf3d82af
+SHA1: 6e4adf55438741f6d07e3f0a2cf523c83db151c5
+SHA256: 56230264f852106c2b5fb981f4e3d7687867866e71f9260557210a223e666ce4
+Description: GNU gzip compression utility
+
 Package: iproute2
 Version: 6.13.0-1
 Architecture: amd64
@@ -272,6 +365,17 @@ MD5sum: 40096057c891ddfe1c6b093a5295cfa6
 SHA1: ad05a4d239201134f92f8d4ac041a4123507877f
 SHA256: 7d691685076e554ad6e55ab1d99a4fe106c4717803a0714ee395e93916b6d997
 Description: ping, arping, tracepath
+
+Package: kbd
+Version: 2.9.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Filename: pool/main/k/kbd/kbd_2.9.0-1_amd64.deb
+Size: 1102852
+MD5sum: eaaec6e84a1aadbcb0f79a5a1d3fcc41
+SHA1: 567f2bd4db9817b50b5507edf3e9ee8167635ff2
+SHA256: aa944ed92387e9e0cfbf96ab60a05894acc575189e71fe1d945a3d576a26173d
+Description: Linux console tools: loadkeys, setfont, keymaps
 
 Package: kmod
 Version: 34.2-1
@@ -379,10 +483,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libcap2, libzstd, xz, zlib
 Filename: pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb
-Size: 822512
-MD5sum: 455554eed736a0a1d0a3cb98706f7023
-SHA1: 368201eed8752de523b9e6eea7c79c57ef39406c
-SHA256: 40e9fe15e5a196b2c7d461eafab99337d3a2eb4d32f375722119f51ae0464567
+Size: 823360
+MD5sum: cb186308e5600993c38956540e25febe
+SHA1: de937a48ec413aa6598de031f087890f8c9837df
+SHA256: 88e6bdaf9de6922248ba2c51384b3bff9298312d6f8c6742dedcbea8792d5684
 Description: systemd library (libsystemd)
 
 Package: libudev
@@ -391,10 +495,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libsystemd
 Filename: pool/main/libu/libudev/libudev_260.6-1_amd64.deb
-Size: 578136
-MD5sum: 7bf8e33d8b25700de0ef017026f8ba28
-SHA1: 5583bb3391baea76ea40faa361065287cb61ec5c
-SHA256: 3b3257c214605a09c081f749126d0f54111f06b232230606a4441c66b5816d9d
+Size: 579092
+MD5sum: 31a7324224d735025e5dbbcd5be65488
+SHA1: 21238f8ed59dbd5ca01d39d7d052218a9fc8666e
+SHA256: ee1f270923071771a5e34937c240f59bf52da391433dda09e248d0e1df11a75b
 Description: udev library (libudev)
 
 Package: libzstd
@@ -485,22 +589,22 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: musl
 Filename: pool/main/l/linux-pam/linux-pam_1.7.3-1_amd64.deb
-Size: 661468
-MD5sum: 98bb0e442cf332567d3c4866390f564f
-SHA1: 74039ffb5e40903d9cf3578c9a8049cdec536c8b
-SHA256: 23d06af60f1fc3040805f737dcf0da5487657f955a9d59b10e4df68e1644a14b
+Size: 662092
+MD5sum: 7b6e1945693615a5c1ea40a2cdee48a4
+SHA1: 5aff64d7e472c99bbba023c1f59fc685a624ddbc
+SHA256: 0c4429a5846d3d5ade4a943e240f1373f0f3badfd25ee1824a30ee4cfde5dc1d
 Description: Linux Pluggable Authentication Modules
 
 Package: mkbootrd
 Version: 2.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Depends: bash, busybox, coreutils, findutils, gawk, kmod, musl, systemd-udev, util-linux-gnu
+Depends: bash, busybox, coreutils, findutils, gawk, kmod, musl, systemd-udev, util-linux-gnu, e2fsprogs, dosfstools
 Filename: pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb
-Size: 5444
-MD5sum: fdc500e8409593cb31d48a04009fb6d0
-SHA1: 29c3e639bef21bd865f5b484caab6bcc9e65196e
-SHA256: f5886313be96ade598912a04065ae29c4dd4c6ab4521f453ea3a7eb1f5ce9e60
+Size: 6132
+MD5sum: ad3b048906e72009bfb4587abbdd20c8
+SHA1: 6cde2bb48f9622687a06a633647f68ef7246d1cd
+SHA256: 282312db1223807bc4f3bcac906b292b8de31b26f9bdfa0e7c532988ce501aef
 Description: Advanced initramfs builder for 81manorg Linux
 
 Package: musl
@@ -577,10 +681,10 @@ Version: 0.64.1-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/o/openrc/openrc_0.64.1-1_amd64.deb
-Size: 551292
-MD5sum: 71d7b5b74360939c563c982ae0e75076
-SHA1: cd06eebb54593de7c5511747d0b339a6f60a91ca
-SHA256: 6c6405b3960c35fc065ca3102606d7d67dba93d4383b9adff14bca7dc7bb1db3
+Size: 551668
+MD5sum: f17cd408fd28a3236c2164bb56e8cb54
+SHA1: 4d1bc49d4da6b9d90c19a27139ead9501f6eca3f
+SHA256: d739e51b0b1298c5af9ddde05576ebf05bcaa995821c7ac36e2e0b54b5a2e678
 Description: OpenRC init system (with 81manorg service scripts)
 
 Package: openrc-sysvcompat
@@ -589,10 +693,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: openrc
 Filename: pool/main/o/openrc-sysvcompat/openrc-sysvcompat_0.64.1-1_amd64.deb
-Size: 936
-MD5sum: 2589d3b4f8178eef99fb4471a65e7e0e
-SHA1: b11a3c17942f1338ef2d5b6eb9a5abb0c3b1e721
-SHA256: 7af1c13a934b5025943fde344a2126add6662bd272f21c01c638c9c57b37c000
+Size: 928
+MD5sum: 0e35723e8a6ed98a18178eebeb1fc707
+SHA1: 611e3da5d65b73da2c5a1e5a47206a53d95b9b25
+SHA256: e1d74a3801721643e562087973b84e9413a469dd2849ce5f4780ba90de5e1625
 Description: SysV-compatible init symlinks
 
 Package: openssl
@@ -601,11 +705,23 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: zlib, ca-certificates
 Filename: pool/main/o/openssl/openssl_3.6.5-1_amd64.deb
-Size: 5304244
-MD5sum: db3261cef14562a8c3959b7df0d9e59e
-SHA1: f4c7a27f699a585432172b691bc091693e937fb2
-SHA256: 7b9e5f25be5387270e835888832ab6277b801a0d2e2b52a7d5a5f075a4c4f013
+Size: 5304320
+MD5sum: 2836bf8253ea972c243b4d5139795f32
+SHA1: 9f36058a3fa288aa2306527276243665ceaa3f2a
+SHA256: 7145f39fe8800a14fcc7a26cbb9fdc152f677fcbecf1b8e53c033e45cd978572
 Description: OpenSSL cryptography library
+
+Package: os-prober
+Version: 1.83-2
+Architecture: amd64
+Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
+Depends: util-linux-gnu, grep
+Filename: pool/main/o/os-prober/os-prober_1.83-2_amd64.deb
+Size: 15324
+MD5sum: 774c279f75abd032759cfbf74958d8cf
+SHA1: 5606152e36c7eee501174400a4d9660f1dad6961
+SHA256: 3b88463bb4fafb3f298aaa35f2bf5100baff04e5f80128398228da733d2095c3
+Description: Detect other operating systems on local disks
 
 Package: procps
 Version: 0.0.1-1
@@ -693,10 +809,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: kmod, libcap2, libzstd, libsystemd, libudev
 Filename: pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb
-Size: 2576632
-MD5sum: e169a509caa48fbc2f6cf4a9d5278ca0
-SHA1: 301f77675882b0b4f5588517dea516264134c7a9
-SHA256: 6778dd8d27bb74f5f0ee6e105fa0a1c4031645743afa4aa5bc4c7d4356b74ece
+Size: 4777828
+MD5sum: 56f1e29c982ab1ec50c028d90da504a4
+SHA1: f19f7eec0f763eabf7335a8c32f67bb0bf84e0db
+SHA256: 2610c657aa5c6ddd9811e3963caafc362fb643ac3abe42232dd7accbaaba8f3c
 Description: Standalone udev device manager
 
 Package: tar
@@ -715,10 +831,10 @@ Version: 0.0.1-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/u/util-linux/util-linux_0.0.1-1_amd64.deb
-Size: 902936
-MD5sum: 0fed52c3b0b6977fc0d498888c6ed563
-SHA1: b1944f1bd0eee2f58c34c0ce933236cf93fffc3d
-SHA256: 751c685199d77a3c5250155c73e288a7bddd7fe152879655a2ce7e4b6912008c
+Size: 903160
+MD5sum: 2e2d655e5bb191d2cd1ef4c09f1352b8
+SHA1: c75698c30b0a9fbbdbc6f4a19260cf891bbaf5d5
+SHA256: 8dc91d42a6220a292ea342cdd252a6ae821a12dcd3d1552a39fdc2a3f9973397
 Description: Rust util-linux
 
 Package: util-linux-gnu
@@ -727,10 +843,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: libcap2, zlib
 Filename: pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb
-Size: 2238384
-MD5sum: 36ab9ffe197690f9fdd32bfeb8cdc456
-SHA1: 6b2f070cd9c0a5f2c3e294bfe933fcb8e09af4a3
-SHA256: 0b510c9f6779eaf715b21ffa3b3be4bcf8f12c7b4e46dcc7628da6fab2f01154
+Size: 2239184
+MD5sum: 99811025a74c6c72813f8492328f555f
+SHA1: b03cbfec99a279922416ce01dc3eba3184a16440
+SHA256: e6988b8fb7fb5aaeeaa2c703342abfb86c05c4179b6e072277efe02192bd175b
 Description: GNU util-linux (libmount and the tools the Rust port does not cover)
 
 Package: wpa-supplicant
@@ -739,10 +855,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: openssl, libnl3
 Filename: pool/main/w/wpa-supplicant/wpa-supplicant_2.12-1_amd64.deb
-Size: 515764
-MD5sum: da19f5a5d79a7ad6f3e5c668e4785016
-SHA1: a01dbb397bb3c074283a54ed4e14d362dd8f6ae5
-SHA256: 5509374feab30d85eb9bae868d422dca67cceafcd4f294b5ac914706098507ef
+Size: 515828
+MD5sum: 1b7bc1f05c498eb949bfef79e5ce013f
+SHA1: f4e8ac238a5605f7660fded05bb2fac540a019ce
+SHA256: b418d2957c4999327f04a4636f572739d89ecb20bc3f2e23c39ef8ba9edd7abc
 Description: WPA/WPA2/WPA3 supplicant
 
 Package: xz

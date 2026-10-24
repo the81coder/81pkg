@@ -67,6 +67,7 @@ cat >> $OUTPUT <<EOF
 
   <h3>APT Repo Info</h3>
   <pre>deb [trusted=yes] https://the81coder.github.io/81pkg 81main main</pre>
+  <p> NOTICE: Everything here is a Git LFS pointer. </p>
 </body>
 </html>
 EOF
