@@ -25,12 +25,12 @@ Package: base
 Version: 1.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Depends: filesystem, busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, dbus, 81pkg, sed, gzip, linux-pam, elogind, bash-completion, openssl, curl, e2fsprogs, kbd
+Depends: filesystem, busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, openrc-sysvcompat, dbus, 81pkg, sed, gzip, linux-pam, elogind, bash-completion, openssl, curl, e2fsprogs, kbd, systemd-udev, libzstd, musl, ncurses, readline, zlib, tar, grep, gawk, ca-certificates, iproute2, iputils, nano
 Filename: pool/main/b/base/base_1.0-1_amd64.deb
-Size: 936
-MD5sum: b8b3239499b08dfceb75691983c81a21
-SHA1: fe9b677ae4353ddd7ae50686a0bc747c9d1f5e52
-SHA256: 600d922952d8dd602826cb1e7daafbf53413bc4ab8328246bcb700ca05683aa3
+Size: 1020
+MD5sum: e1e166650f1a04b622e87ed0f4964904
+SHA1: e814903f524cebdd69b14234585b8af8bb592bc0
+SHA256: 56e632ef7675a96634abb42e2bc377ac8f488f644ef5313fbb66858cd53bb510
 Description: 81manorg Base System (meta)
 
 Package: bash
@@ -105,12 +105,12 @@ Package: curl
 Version: 8.23.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Depends: ca-certificates, openssl, zlib
+Depends: ca-certificates, openssl, zlib, libzstd
 Filename: pool/main/c/curl/curl_8.23.0-1_amd64.deb
-Size: 965652
-MD5sum: 589209b6d2ad87ee1f82932066db62c4
-SHA1: 28db76a1fced30047bc47b7292cd8df895f7ebc9
-SHA256: f96d3ad9be6e6e59bf55e25c80503fdc8cc643d6dcbc031462fca2e7f017634c
+Size: 965480
+MD5sum: c0266179dc5d8ed3edc3cdec7d16ffc6
+SHA1: 5a272d2c2832c42be05d20561480277e1c9dd216
+SHA256: 56039c2dd92feeead62cf4cd2fa7d8e322d3e80525779f4cd1b2f94183793fa3
 Description: URL transfer tool
 
 Package: dbus
@@ -193,14 +193,15 @@ SHA256: 6b86edaf8cd50fe7dea750fb50f155da70f3f261a5835290889a3b7646913b2a
 Description: XML parsing library (dbus dependency)
 
 Package: filesystem
-Version: 1.0-2
+Version: 1.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
-Filename: pool/main/f/filesystem/filesystem_1.0-2_amd64.deb
-Size: 1820
-MD5sum: 2c7f9a1b7c406a59f6d088c65c1cffdd
-SHA1: e6b29dfa428499214b86dbcdcf87a92c932054bd
-SHA256: 588b55c3e7d19b4013974d1edf88291814f3cf66fbb887a41f1f842028f4f2ff
+Depends: busybox
+Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
+Size: 3424
+MD5sum: c6fafcb2c2d94faf89b5d43a5c148b8f
+SHA1: d4bf35e386263451e3ab60e31651445363274c09
+SHA256: 8f7b89f7988075ca9c62637e2e3ce22aea6e648262cef17f4f894349be370e4c
 Description: 81manorg base directory layout
 
 Package: findutils
