@@ -5,16 +5,16 @@ Codename: 81main
 Architectures: amd64
 Components: main
 Description: 81manorg Linux
-Date: Sat, 24 Oct 2026 18:10:30 UTC
+Date: Sat, 24 Oct 2026 19:08:50 UTC
 MD5Sum:
- 6578c3337a97ea3214ebcd4f8d5c21f0            31929 main/binary-amd64/Packages
- 28a992e3a5b4e2cf13d0d068d2b0cccb            11149 main/binary-amd64/Packages.gz
- ee00c27f4791aad11e4818fc4fe61832            10112 main/binary-amd64/Packages.xz
+ 5633fad9a10f3a2cbbd3d0faa2468ab5            31929 main/binary-amd64/Packages
+ 6019bd64c1270bd23d7aaf29043b3424            11154 main/binary-amd64/Packages.gz
+ fcd345edd73d23d762b6c7464a5c45f6            10112 main/binary-amd64/Packages.xz
 SHA1:
- 1280cf12ebc2dd7bf5e84f98f4c4a4bbd01c4d26            31929 main/binary-amd64/Packages
- d5572c416432d8a2887be05794d5e5613e9e21e2            11149 main/binary-amd64/Packages.gz
- 800f6349b3a3a43beb5c5df23a6720db7bcfaced            10112 main/binary-amd64/Packages.xz
+ b63108f5f40c5c38334110e06dd2570526933baa            31929 main/binary-amd64/Packages
+ 60081419124406f759e52bb81f2c7597346a36fa            11154 main/binary-amd64/Packages.gz
+ 7638e1a625b99c5aa6fdba31c7c2f7a16895d6dc            10112 main/binary-amd64/Packages.xz
 SHA256:
- 03e2393a4cb70e962180e2450de2aa2e1ebaaf376640279600abca21c06cb26e            31929 main/binary-amd64/Packages
- a5b7710cb00cf26f7947587e149e3926b9eacfa660ff6f63ff25884fe9b090e4            11149 main/binary-amd64/Packages.gz
- 5fb77f206edbe17a89ed4681e50fb1ec0a2b97c5f9d489fb99e975872aacd8d2            10112 main/binary-amd64/Packages.xz
+ 2abfbdff424bb691834bb648ae374f3451a7f5bff4e22594404965c985221d1e            31929 main/binary-amd64/Packages
+ 54631422978ed6b820671be8acf851f1e0b78374405524f491246ca39cff0af3            11154 main/binary-amd64/Packages.gz
+ 75ed6d436084a83ac980c17c0fa4c71f2a0aa4641ee5ce7ad7852d04df3244c9            10112 main/binary-amd64/Packages.xz
