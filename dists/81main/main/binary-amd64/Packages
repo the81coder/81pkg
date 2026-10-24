@@ -39,10 +39,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: musl, readline, ncurses
 Filename: pool/main/b/bash/bash_5.3-2_amd64.deb
-Size: 1712420
-MD5sum: 795e98ff1db20528e555bc191c42489c
-SHA1: 21e53cc31dc95538502235a3ea28ef75ee4f33f1
-SHA256: 82e9cc7c9d54d467a06c77353560ac66d949cd44ffa821efb3defa78ca1f3544
+Size: 1712924
+MD5sum: 46839d80865a7b51eb80bb2b9d287c55
+SHA1: 9db52a8853efcbceb5c103018ef81d8317bf38cb
+SHA256: ab1c2583e5e85be9e74b897848015e0614424e4974c819cb64aa10a66b13b6fd
 Description: GNU Bourne-Again Shell
 
 Package: bash-completion
@@ -198,10 +198,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: busybox
 Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
-Size: 3440
-MD5sum: 11bdfc77e8a5613d4dd6fa468778ae46
-SHA1: ab1a6618fcdfcd95eb28b65b4cf90be9671ea333
-SHA256: f0c16df3dbc3a80cc795636139be5645092388da5db417f62f8902882a412769
+Size: 3448
+MD5sum: 375760413dea6d735cdae91b375ee6fe
+SHA1: ac0559776762410df7bc529cc22513f771b6df60
+SHA256: de2c9f1e4f27993b484d348745bb9e288dae33caaac94829af50307b1444ee2c
 Description: 81manorg base directory layout
 
 Package: findutils
@@ -338,10 +338,10 @@ Version: 1.15-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/g/gzip/gzip_1.15-1_amd64.deb
-Size: 89548
-MD5sum: 2b9aa01599e413dabdb159fdcf3d82af
-SHA1: 6e4adf55438741f6d07e3f0a2cf523c83db151c5
-SHA256: 56230264f852106c2b5fb981f4e3d7687867866e71f9260557210a223e666ce4
+Size: 89568
+MD5sum: ceb1415ec59d33560bc62aaac0e749ca
+SHA1: 2fabd3b4a819f823b9c70fb71fdcb6d17158c7f0
+SHA256: ddfde5618f2f9674ae4089c8427e9c61fdfa53f5b0b086358aae259aa2f75102
 Description: GNU gzip compression utility
 
 Package: iproute2
@@ -636,10 +636,10 @@ Version: 6.6-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/n/ncurses/ncurses_6.6-1_amd64.deb
-Size: 640060
-MD5sum: babf164fc9d5e78bb166e3ee8d4bd4de
-SHA1: 9b07b526b64d37241b02497048cbf6c48330b654
-SHA256: b6c878bbb9b3d38f22f3c81ec9a7f9827677a3d7a44fbee1cce05d93f2c89097
+Size: 640496
+MD5sum: 423994814c0d60ebbf19f59fd41438d1
+SHA1: 9a09e5c440de791d5c872ae6808ea0aae11a4541
+SHA256: 9f7b2c534ff6f9cb99eec11a7debb5eee1f30b7901323ec17b779e12eb2eb1eb
 Description: Terminal handling library
 
 Package: net-tools
