@@ -28,9 +28,9 @@ Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, dbus, 81pkg, sed, linux-pam, elogind, bash-completion
 Filename: pool/main/b/base/base_1.0-1_amd64.deb
 Size: 904
-MD5sum: dfd07560c294c6a25f2555c0baf7a96d
-SHA1: 527c8da296f818bc66406749afb0b0619ea00eef
-SHA256: b29ef0dae5be3d028ea3192d24b5c40a1d709652dcb3995b2aba5c38e235f974
+MD5sum: 774bbecc728d10ec2ab9a8cc2879fe52
+SHA1: df67bcb45604f31af7ec50b97aa2754865677115
+SHA256: 47e4a61518cc70ff24005f05790371fa198de41f7996cf8eb513b9298c98bcd5
 Description: 81manorg Base System (meta)
 
 Package: bash
@@ -163,10 +163,10 @@ Version: 1.0-1
 Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
-Size: 856
-MD5sum: 6d7f972ccf3f8c2ea3b80982388e6fe4
-SHA1: 38ee1770b0a4f7b51d11eaaf9486f135449663b2
-SHA256: 3db6634075e76e857dca75d61065b079878f9c3ba0336bc6bfb393f0c1f78ac6
+Size: 908
+MD5sum: 66cc7873b6b097e9424ac4cc813a46fd
+SHA1: 4af3854aec90adb75559889945610be62b3ec62d
+SHA256: 6f954f106e7ea072786e4a5fef19f147fbd0c3848e2e1b68ef201eaac015a40f
 Description: 81manorg base directory layout
 
 Package: findutils
@@ -497,10 +497,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: bash, busybox, coreutils, findutils, gawk, kmod, musl, systemd-udev, util-linux-gnu
 Filename: pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb
-Size: 5372
-MD5sum: 17372cbae21a0e5293532dcd9bc19d27
-SHA1: 0356654ad7c16cbd426067d2900a99dbc8a467ce
-SHA256: 167dc826397c2b5338f06082fb0dc508168057d5dd488912cfdb49603430ea6b
+Size: 5444
+MD5sum: fdc500e8409593cb31d48a04009fb6d0
+SHA1: 29c3e639bef21bd865f5b484caab6bcc9e65196e
+SHA256: f5886313be96ade598912a04065ae29c4dd4c6ab4521f453ea3a7eb1f5ce9e60
 Description: Advanced initramfs builder for 81manorg Linux
 
 Package: musl
