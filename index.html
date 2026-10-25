@@ -5,132 +5,827 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>81manorg APT Repository</title>
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #f9f9f9;
-      color: #222;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin: 0.5rem 0;
-    }
-    a {
-      color: #1e90ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code, pre {
-      background: #eee;
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
-      font-size: 0.95rem;
-    }
-    hr {
-      margin: 2rem 0;
-    }
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 1rem; background: #f9f9f9; color: #222; }
+    h1 { color: #2c3e50; }
+    .pkg-list { list-style: none; padding-left: 0; }
+    .pkg-item { margin: 0.4rem 0; border-bottom: 1px solid #eee; padding: 0.4rem 0; }
+    .pkg-name { font-weight: bold; color: #2c3e50; }
+    .pkg-ver { color: #666; font-size: 0.9rem; }
+    .toggle { cursor: pointer; user-select: none; display: inline-block; width: 1.2rem; text-align: center; color: #1e90ff; font-weight: bold; margin-right: 0.3rem; }
+    .toggle:hover { color: #0056b3; }
+    .details { display: none; margin: 0.5rem 0 0.5rem 1.5rem; padding: 0.5rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.9rem; }
+    .details.open { display: block; }
+    .details pre { margin: 0; white-space: pre-wrap; word-break: break-word; }
+    .dl-btn { cursor: pointer; display: inline-block; margin-left: 0.8rem; padding: 0.15rem 0.6rem; background: #28a745; color: #fff; border: none; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+    .dl-btn:hover { background: #218838; }
+    .dl-btn:disabled { background: #aaa; cursor: not-allowed; }
+    code, pre { background: #eee; padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.95rem; }
+    hr { margin: 2rem 0; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal-overlay.show { display: flex; }
+    .modal { background: #fff; border-radius: 8px; padding: 1.5rem; width: 90%; max-width: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    .modal h3 { margin-top: 0; color: #2c3e50; }
+    .modal .info { font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .modal .info span { font-weight: bold; }
+    .progress-bar { width: 100%; height: 24px; background: #eee; border-radius: 12px; overflow: hidden; margin: 0.8rem 0; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #28a745, #20c997); width: 0%; transition: width 0.2s; border-radius: 12px; }
+    .stats { display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; }
+    .status-text { font-size: 0.9rem; color: #333; margin-top: 0.5rem; }
+    .close-btn { margin-top: 1rem; padding: 0.4rem 1rem; background: #dc3545; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    .close-btn:hover { background: #c82333; }
   </style>
 </head>
 <body>
   <h1>81manorg APT Repository</h1>
   <p>This is the public package index for the <strong>81pkg</strong> APT repo.</p>
-
   <h2>Available Packages</h2>
-  <ul>
-    <li><a href="pool/main/8/81pkg-keyring/81pkg-keyring_1.0-1_amd64.deb">81pkg-keyring_1.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/8/81pkg/81pkg_3.0.0-1_amd64.deb">81pkg_3.0.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/b/base/base_1.0-1_amd64.deb">base_1.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/b/bash-completion/bash-completion_2.18.0-1_amd64.deb">bash-completion_2.18.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/b/bash/bash_5.3-2_amd64.deb">bash_5.3-2_amd64.deb</a></li>
-    <li><a href="pool/main/b/busybox/busybox_1.38.0-1_amd64.deb">busybox_1.38.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/b/bzip2/bzip2_1.0.8-1_amd64.deb">bzip2_1.0.8-1_amd64.deb</a></li>
-    <li><a href="pool/main/c/ca-certificates/ca-certificates_20261001-1_amd64.deb">ca-certificates_20261001-1_amd64.deb</a></li>
-    <li><a href="pool/main/c/coreutils/coreutils_0.12.0-1_amd64.deb">coreutils_0.12.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/c/curl/curl_8.23.0-1_amd64.deb">curl_8.23.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/d/dbus/dbus_1.16.2-1_amd64.deb">dbus_1.16.2-1_amd64.deb</a></li>
-    <li><a href="pool/main/d/device-mapper/device-mapper_2.03.41-1_amd64.deb">device-mapper_2.03.41-1_amd64.deb</a></li>
-    <li><a href="pool/main/d/diffutils/diffutils_0.5.0-1_amd64.deb">diffutils_0.5.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/d/dosfstools/dosfstools_4.2-1_amd64.deb">dosfstools_4.2-1_amd64.deb</a></li>
-    <li><a href="pool/main/e/e2fsprogs/e2fsprogs_1.47.3-1_amd64.deb">e2fsprogs_1.47.3-1_amd64.deb</a></li>
-    <li><a href="pool/main/e/elogind/elogind_257.16-1_amd64.deb">elogind_257.16-1_amd64.deb</a></li>
-    <li><a href="pool/main/e/expat/expat_2.9.0-1_amd64.deb">expat_2.9.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/f/filesystem/filesystem_1.0-2_amd64.deb">filesystem_1.0-2_amd64.deb</a></li>
-    <li><a href="pool/main/f/findutils/findutils_0.10.0-1_amd64.deb">findutils_0.10.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/gawk/gawk_5.4.1-1_amd64.deb">gawk_5.4.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/genfstab/genfstab_32-1_amd64.deb">genfstab_32-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/glib/glib_2.90.1-1_amd64.deb">glib_2.90.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/gmp/gmp_6.3.0-1_amd64.deb">gmp_6.3.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/gnutls/gnutls_3.8.10-1_amd64.deb">gnutls_3.8.10-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/grep/grep_3.12-1_amd64.deb">grep_3.12-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/grub-bios/grub-bios_2.14-1_amd64.deb">grub-bios_2.14-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/grub-common/grub-common_2.14-1_amd64.deb">grub-common_2.14-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/grub-efi-x86-64/grub-efi-x86-64_2.14-1_amd64.deb">grub-efi-x86-64_2.14-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/grub/grub_2.14-1_amd64.deb">grub_2.14-1_amd64.deb</a></li>
-    <li><a href="pool/main/g/gzip/gzip_1.15-1_amd64.deb">gzip_1.15-1_amd64.deb</a></li>
-    <li><a href="pool/main/i/iproute2/iproute2_6.13.0-1_amd64.deb">iproute2_6.13.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/i/iputils/iputils_20250605-1_amd64.deb">iputils_20250605-1_amd64.deb</a></li>
-    <li><a href="pool/main/k/kbd/kbd_2.9.0-1_amd64.deb">kbd_2.9.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/k/kmod/kmod_34.2-1_amd64.deb">kmod_34.2-1_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-firmware-amd/linux-firmware-amd_20260916-1_amd64.deb">linux-firmware-amd_20260916-1_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-firmware-core/linux-firmware-core_20260916-1_amd64.deb">linux-firmware-core_20260916-1_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-firmware-extra/linux-firmware-extra_20260916-1_amd64.deb">linux-firmware-extra_20260916-1_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-firmware-intel/linux-firmware-intel_20260916-1_amd64.deb">linux-firmware-intel_20260916-1_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-firmware/linux-firmware_20260916-1_amd64.deb">linux-firmware_20260916-1_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-image/linux-image_6.18.58-81manorg_amd64.deb">linux-image_6.18.58-81manorg_amd64.deb</a></li>
-    <li><a href="pool/main/l/linux-pam/linux-pam_1.7.3-1_amd64.deb">linux-pam_1.7.3-1_amd64.deb</a></li>
-    <li><a href="pool/main/libc/libcap2/libcap2_2.78-1_amd64.deb">libcap2_2.78-1_amd64.deb</a></li>
-    <li><a href="pool/main/libe/libedit/libedit_3.1-20260512-1_amd64.deb">libedit_3.1-20260512-1_amd64.deb</a></li>
-    <li><a href="pool/main/libf/libffi/libffi_3.8.0-1_amd64.deb">libffi_3.8.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/libg/libgcc/libgcc_16.2.1-1_amd64.deb">libgcc_16.2.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/libm/libmnl/libmnl_1.0.5-1_amd64.deb">libmnl_1.0.5-1_amd64.deb</a></li>
-    <li><a href="pool/main/libn/libnftnl/libnftnl_1.3.2-1_amd64.deb">libnftnl_1.3.2-1_amd64.deb</a></li>
-    <li><a href="pool/main/libn/libnl3/libnl3_3.12.0-1_amd64.deb">libnl3_3.12.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/libp/libpcre2/libpcre2_10.49-1_amd64.deb">libpcre2_10.49-1_amd64.deb</a></li>
-    <li><a href="pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb">libsystemd_260.6-1_amd64.deb</a></li>
-    <li><a href="pool/main/libu/libudev/libudev_260.6-1_amd64.deb">libudev_260.6-1_amd64.deb</a></li>
-    <li><a href="pool/main/libz/libzstd/libzstd_1.5.7-1_amd64.deb">libzstd_1.5.7-1_amd64.deb</a></li>
-    <li><a href="pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb">mkbootrd_2.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/m/musl/musl_1.2.6-1_amd64.deb">musl_1.2.6-1_amd64.deb</a></li>
-    <li><a href="pool/main/n/nano/nano_9.2-1_amd64.deb">nano_9.2-1_amd64.deb</a></li>
-    <li><a href="pool/main/n/ncurses/ncurses_6.6-1_amd64.deb">ncurses_6.6-1_amd64.deb</a></li>
-    <li><a href="pool/main/n/net-tools/net-tools_2.10-1_amd64.deb">net-tools_2.10-1_amd64.deb</a></li>
-    <li><a href="pool/main/n/nettle/nettle_3.10.1-1_amd64.deb">nettle_3.10.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/n/nftables/nftables_1.1.7-1_amd64.deb">nftables_1.1.7-1_amd64.deb</a></li>
-    <li><a href="pool/main/o/openrc-sysvcompat/openrc-sysvcompat_0.64.1-1_amd64.deb">openrc-sysvcompat_0.64.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/o/openrc/openrc_0.64.1-1_amd64.deb">openrc_0.64.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/o/openssl/openssl_3.6.5-1_amd64.deb">openssl_3.6.5-1_amd64.deb</a></li>
-    <li><a href="pool/main/o/os-prober/os-prober_1.83-2_amd64.deb">os-prober_1.83-2_amd64.deb</a></li>
-    <li><a href="pool/main/p/procps-gnu/procps-gnu_4.0.7-1_amd64.deb">procps-gnu_4.0.7-1_amd64.deb</a></li>
-    <li><a href="pool/main/p/procps/procps_0.0.1-1_amd64.deb">procps_0.0.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/p/pv/pv_1.12.0-1_amd64.deb">pv_1.12.0-1_amd64.deb</a></li>
-    <li><a href="pool/main/r/readline/readline_8.3-1_amd64.deb">readline_8.3-1_amd64.deb</a></li>
-    <li><a href="pool/main/s/sed/sed_4.10-1_amd64.deb">sed_4.10-1_amd64.deb</a></li>
-    <li><a href="pool/main/s/shadow-gnu/shadow-gnu_4.20.3-1_amd64.deb">shadow-gnu_4.20.3-1_amd64.deb</a></li>
-    <li><a href="pool/main/s/shadow/shadow_0.2.1-1_amd64.deb">shadow_0.2.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb">systemd-udev_260.6-1_amd64.deb</a></li>
-    <li><a href="pool/main/t/tar/tar_1.35-1_amd64.deb">tar_1.35-1_amd64.deb</a></li>
-    <li><a href="pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb">util-linux-gnu_2.42.4-1_amd64.deb</a></li>
-    <li><a href="pool/main/u/util-linux/util-linux_0.0.1-1_amd64.deb">util-linux_0.0.1-1_amd64.deb</a></li>
-    <li><a href="pool/main/w/wpa-supplicant/wpa-supplicant_2.12-1_amd64.deb">wpa-supplicant_2.12-1_amd64.deb</a></li>
-    <li><a href="pool/main/x/xz/xz_5.8.4-1_amd64.deb">xz_5.8.4-1_amd64.deb</a></li>
-    <li><a href="pool/main/z/zlib/zlib_1.3.2-1_amd64.deb">zlib_1.3.2-1_amd64.deb</a></li>
-    <li><a href="pool/main/z/zsh/zsh_5.9.2-1_amd64.deb">zsh_5.9.2-1_amd64.deb</a></li>
+  <ul class="pkg-list">
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">81pkg</span> <span class="pkg-ver">3.0.0-1</span> <button class="dl-btn" onclick="downloadPkg('81pkg')">Download</button><div class="details"><pre>Package: 81pkg
+Version: 3.0.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: bash, busybox
+Filename: pool/main/8/81pkg/81pkg_3.0.0-1_amd64.deb
+Size: 15492
+Description: 81manorg Package Manager</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">81pkg-keyring</span> <span class="pkg-ver">1.0-1</span> <button class="dl-btn" onclick="downloadPkg('81pkg-keyring')">Download</button><div class="details"><pre>Package: 81pkg-keyring
+Version: 1.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/8/81pkg-keyring/81pkg-keyring_1.0-1_amd64.deb
+Size: 848
+Description: 81manorg GPG keyring for package verification</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">base</span> <span class="pkg-ver">1.0-1</span> <button class="dl-btn" onclick="downloadPkg('base')">Download</button><div class="details"><pre>Package: base
+Version: 1.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: filesystem, busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, openrc-sysvcompat, dbus, 81pkg, sed, gzip, linux-pam, elogind, bash-completion, openssl, curl, e2fsprogs, kbd, systemd-udev, libzstd, musl, ncurses, readline, zlib, tar, grep, gawk, ca-certificates, iproute2, iputils, nano
+Filename: pool/main/b/base/base_1.0-1_amd64.deb
+Size: 1020
+Description: 81manorg Base System (meta)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">bash</span> <span class="pkg-ver">5.3-2</span> <button class="dl-btn" onclick="downloadPkg('bash')">Download</button><div class="details"><pre>Package: bash
+Version: 5.3-2
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: musl, readline, ncurses
+Filename: pool/main/b/bash/bash_5.3-2_amd64.deb
+Size: 1712924
+Description: GNU Bourne-Again Shell</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">bash-completion</span> <span class="pkg-ver">2.18.0-1</span> <button class="dl-btn" onclick="downloadPkg('bash-completion')">Download</button><div class="details"><pre>Package: bash-completion
+Version: 2.18.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: bash
+Filename: pool/main/b/bash-completion/bash-completion_2.18.0-1_amd64.deb
+Size: 192752
+Description: Programmable completion for Bash</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">busybox</span> <span class="pkg-ver">1.38.0-1</span> <button class="dl-btn" onclick="downloadPkg('busybox')">Download</button><div class="details"><pre>Package: busybox
+Version: 1.38.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/b/busybox/busybox_1.38.0-1_amd64.deb
+Size: 684472
+Description: Embedded Linux utilities (initramfs + safety net)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">bzip2</span> <span class="pkg-ver">1.0.8-1</span> <button class="dl-btn" onclick="downloadPkg('bzip2')">Download</button><div class="details"><pre>Package: bzip2
+Version: 1.0.8-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/b/bzip2/bzip2_1.0.8-1_amd64.deb
+Size: 64904
+Description: bzip2 compression tools and libbz2</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">ca-certificates</span> <span class="pkg-ver">20261001-1</span> <button class="dl-btn" onclick="downloadPkg('ca-certificates')">Download</button><div class="details"><pre>Package: ca-certificates
+Version: 20261001-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/c/ca-certificates/ca-certificates_20261001-1_amd64.deb
+Size: 111620
+Description: Mozilla CA certificate bundle</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">coreutils</span> <span class="pkg-ver">0.12.0-1</span> <button class="dl-btn" onclick="downloadPkg('coreutils')">Download</button><div class="details"><pre>Package: coreutils
+Version: 0.12.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/c/coreutils/coreutils_0.12.0-1_amd64.deb
+Size: 4022380
+Description: Rust coreutils</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">curl</span> <span class="pkg-ver">8.23.0-1</span> <button class="dl-btn" onclick="downloadPkg('curl')">Download</button><div class="details"><pre>Package: curl
+Version: 8.23.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: ca-certificates, openssl, zlib, libzstd
+Filename: pool/main/c/curl/curl_8.23.0-1_amd64.deb
+Size: 965480
+Description: URL transfer tool</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">dbus</span> <span class="pkg-ver">1.16.2-1</span> <button class="dl-btn" onclick="downloadPkg('dbus')">Download</button><div class="details"><pre>Package: dbus
+Version: 1.16.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/d/dbus/dbus_1.16.2-1_amd64.deb
+Size: 989180
+Description: D-Bus message bus</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">device-mapper</span> <span class="pkg-ver">2.03.41-1</span> <button class="dl-btn" onclick="downloadPkg('device-mapper')">Download</button><div class="details"><pre>Package: device-mapper
+Version: 2.03.41-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/d/device-mapper/device-mapper_2.03.41-1_amd64.deb
+Size: 270028
+Description: Device mapper userspace library (libdevmapper) and dmsetup</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">diffutils</span> <span class="pkg-ver">0.5.0-1</span> <button class="dl-btn" onclick="downloadPkg('diffutils')">Download</button><div class="details"><pre>Package: diffutils
+Version: 0.5.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/d/diffutils/diffutils_0.5.0-1_amd64.deb
+Size: 644556
+Description: Rust diffutils (diff, cmp)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">dosfstools</span> <span class="pkg-ver">4.2-1</span> <button class="dl-btn" onclick="downloadPkg('dosfstools')">Download</button><div class="details"><pre>Package: dosfstools
+Version: 4.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/d/dosfstools/dosfstools_4.2-1_amd64.deb
+Size: 128800
+Description: MS-DOS FAT filesystem utilities (mkfs.fat, fsck.fat)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">e2fsprogs</span> <span class="pkg-ver">1.47.3-1</span> <button class="dl-btn" onclick="downloadPkg('e2fsprogs')">Download</button><div class="details"><pre>Package: e2fsprogs
+Version: 1.47.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: util-linux-gnu
+Filename: pool/main/e/e2fsprogs/e2fsprogs_1.47.3-1_amd64.deb
+Size: 760268
+Description: Ext2/3/4 filesystem utilities (e2fsck, mke2fs, tune2fs)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">elogind</span> <span class="pkg-ver">257.16-1</span> <button class="dl-btn" onclick="downloadPkg('elogind')">Download</button><div class="details"><pre>Package: elogind
+Version: 257.16-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: linux-pam
+Filename: pool/main/e/elogind/elogind_257.16-1_amd64.deb
+Size: 5408888
+Description: elogind session/login manager (standalone logind fork)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">expat</span> <span class="pkg-ver">2.9.0-1</span> <button class="dl-btn" onclick="downloadPkg('expat')">Download</button><div class="details"><pre>Package: expat
+Version: 2.9.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/e/expat/expat_2.9.0-1_amd64.deb
+Size: 133560
+Description: XML parsing library (dbus dependency)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">filesystem</span> <span class="pkg-ver">1.0-1</span> <button class="dl-btn" onclick="downloadPkg('filesystem')">Download</button><div class="details"><pre>Package: filesystem
+Version: 1.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: busybox
+Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
+Size: 3440
+Description: 81manorg base directory layout</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">findutils</span> <span class="pkg-ver">0.10.0-1</span> <button class="dl-btn" onclick="downloadPkg('findutils')">Download</button><div class="details"><pre>Package: findutils
+Version: 0.10.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/f/findutils/findutils_0.10.0-1_amd64.deb
+Size: 1443068
+Description: Rust findutils (find, locate, updatedb, xargs)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">gawk</span> <span class="pkg-ver">5.4.1-1</span> <button class="dl-btn" onclick="downloadPkg('gawk')">Download</button><div class="details"><pre>Package: gawk
+Version: 5.4.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/g/gawk/gawk_5.4.1-1_amd64.deb
+Size: 1297944
+Description: GNU awk</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">genfstab</span> <span class="pkg-ver">32-1</span> <button class="dl-btn" onclick="downloadPkg('genfstab')">Download</button><div class="details"><pre>Package: genfstab
+Version: 32-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: util-linux-gnu, bash
+Filename: pool/main/g/genfstab/genfstab_32-1_amd64.deb
+Size: 5124
+Description: Arch install tools</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">glib</span> <span class="pkg-ver">2.90.1-1</span> <button class="dl-btn" onclick="downloadPkg('glib')">Download</button><div class="details"><pre>Package: glib
+Version: 2.90.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libzstd, libpcre2
+Filename: pool/main/g/glib/glib_2.90.1-1_amd64.deb
+Size: 7838296
+Description: GLib library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">gmp</span> <span class="pkg-ver">6.3.0-1</span> <button class="dl-btn" onclick="downloadPkg('gmp')">Download</button><div class="details"><pre>Package: gmp
+Version: 6.3.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/g/gmp/gmp_6.3.0-1_amd64.deb
+Size: 344220
+Description: GNU multiple precision arithmetic library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">gnutls</span> <span class="pkg-ver">3.8.10-1</span> <button class="dl-btn" onclick="downloadPkg('gnutls')">Download</button><div class="details"><pre>Package: gnutls
+Version: 3.8.10-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: nettle, gmp
+Filename: pool/main/g/gnutls/gnutls_3.8.10-1_amd64.deb
+Size: 1795668
+Description: GNU TLS library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">grep</span> <span class="pkg-ver">3.12-1</span> <button class="dl-btn" onclick="downloadPkg('grep')">Download</button><div class="details"><pre>Package: grep
+Version: 3.12-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libpcre2
+Filename: pool/main/g/grep/grep_3.12-1_amd64.deb
+Size: 159628
+Description: GNU grep</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">grub</span> <span class="pkg-ver">2.14-1</span> <button class="dl-btn" onclick="downloadPkg('grub')">Download</button><div class="details"><pre>Package: grub
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: grub-common, grub-bios, grub-efi-x86-64
+Filename: pool/main/g/grub/grub_2.14-1_amd64.deb
+Size: 836
+Description: GRUB bootloader (metapackage)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">grub-bios</span> <span class="pkg-ver">2.14-1</span> <button class="dl-btn" onclick="downloadPkg('grub-bios')">Download</button><div class="details"><pre>Package: grub-bios
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: grub-common
+Filename: pool/main/g/grub-bios/grub-bios_2.14-1_amd64.deb
+Size: 5122468
+Description: GRUB modules and BIOS setup (i386-pc)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">grub-common</span> <span class="pkg-ver">2.14-1</span> <button class="dl-btn" onclick="downloadPkg('grub-common')">Download</button><div class="details"><pre>Package: grub-common
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: device-mapper, xz, os-prober, util-linux-gnu
+Filename: pool/main/g/grub-common/grub-common_2.14-1_amd64.deb
+Size: 1802232
+Description: GRUB common tools: grub-install, grub-mkconfig, grub-probe</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">grub-efi-x86-64</span> <span class="pkg-ver">2.14-1</span> <button class="dl-btn" onclick="downloadPkg('grub-efi-x86-64')">Download</button><div class="details"><pre>Package: grub-efi-x86-64
+Version: 2.14-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: grub-common
+Filename: pool/main/g/grub-efi-x86-64/grub-efi-x86-64_2.14-1_amd64.deb
+Size: 836
+Description: GRUB modules for 64-bit UEFI (x86_64-efi)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">gzip</span> <span class="pkg-ver">1.15-1</span> <button class="dl-btn" onclick="downloadPkg('gzip')">Download</button><div class="details"><pre>Package: gzip
+Version: 1.15-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/g/gzip/gzip_1.15-1_amd64.deb
+Size: 89568
+Description: GNU gzip compression utility</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">iproute2</span> <span class="pkg-ver">6.13.0-1</span> <button class="dl-btn" onclick="downloadPkg('iproute2')">Download</button><div class="details"><pre>Package: iproute2
+Version: 6.13.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/i/iproute2/iproute2_6.13.0-1_amd64.deb
+Size: 1010916
+Description: IP routing and network utilities</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">iputils</span> <span class="pkg-ver">20250605-1</span> <button class="dl-btn" onclick="downloadPkg('iputils')">Download</button><div class="details"><pre>Package: iputils
+Version: 20250605-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libcap2
+Filename: pool/main/i/iputils/iputils_20250605-1_amd64.deb
+Size: 198728
+Description: ping, arping, tracepath</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">kbd</span> <span class="pkg-ver">2.9.0-1</span> <button class="dl-btn" onclick="downloadPkg('kbd')">Download</button><div class="details"><pre>Package: kbd
+Version: 2.9.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/k/kbd/kbd_2.9.0-1_amd64.deb
+Size: 1102852
+Description: Linux console tools: loadkeys, setfont, keymaps</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">kmod</span> <span class="pkg-ver">34.2-1</span> <button class="dl-btn" onclick="downloadPkg('kmod')">Download</button><div class="details"><pre>Package: kmod
+Version: 34.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/k/kmod/kmod_34.2-1_amd64.deb
+Size: 97076
+Description: Kernel module tools</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libcap2</span> <span class="pkg-ver">2.78-1</span> <button class="dl-btn" onclick="downloadPkg('libcap2')">Download</button><div class="details"><pre>Package: libcap2
+Version: 2.78-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libc/libcap2/libcap2_2.78-1_amd64.deb
+Size: 756
+Description: POSIX capabilities library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libedit</span> <span class="pkg-ver">3.1-20260512-1</span> <button class="dl-btn" onclick="downloadPkg('libedit')">Download</button><div class="details"><pre>Package: libedit
+Version: 3.1-20260512-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libe/libedit/libedit_3.1-20260512-1_amd64.deb
+Size: 109020
+Description: BSD editline library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libffi</span> <span class="pkg-ver">3.8.0-1</span> <button class="dl-btn" onclick="downloadPkg('libffi')">Download</button><div class="details"><pre>Package: libffi
+Version: 3.8.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libf/libffi/libffi_3.8.0-1_amd64.deb
+Size: 47264
+Description: Foreign function interface library (glib dependency)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libgcc</span> <span class="pkg-ver">16.2.1-1</span> <button class="dl-btn" onclick="downloadPkg('libgcc')">Download</button><div class="details"><pre>Package: libgcc
+Version: 16.2.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libg/libgcc/libgcc_16.2.1-1_amd64.deb
+Size: 1339288
+Description: GCC static support library (libgcc.a, static-link only)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libmnl</span> <span class="pkg-ver">1.0.5-1</span> <button class="dl-btn" onclick="downloadPkg('libmnl')">Download</button><div class="details"><pre>Package: libmnl
+Version: 1.0.5-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libm/libmnl/libmnl_1.0.5-1_amd64.deb
+Size: 10088
+Description: Minimalistic Netlink library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libnftnl</span> <span class="pkg-ver">1.3.2-1</span> <button class="dl-btn" onclick="downloadPkg('libnftnl')">Download</button><div class="details"><pre>Package: libnftnl
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libmnl
+Filename: pool/main/libn/libnftnl/libnftnl_1.3.2-1_amd64.deb
+Size: 78208
+Description: nftables netlink library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libnl3</span> <span class="pkg-ver">3.12.0-1</span> <button class="dl-btn" onclick="downloadPkg('libnl3')">Download</button><div class="details"><pre>Package: libnl3
+Version: 3.12.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libn/libnl3/libnl3_3.12.0-1_amd64.deb
+Size: 376864
+Description: Netlink socket library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libpcre2</span> <span class="pkg-ver">10.49-1</span> <button class="dl-btn" onclick="downloadPkg('libpcre2')">Download</button><div class="details"><pre>Package: libpcre2
+Version: 10.49-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libp/libpcre2/libpcre2_10.49-1_amd64.deb
+Size: 1061348
+Description: Perl-compatible regular expressions v2 library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libsystemd</span> <span class="pkg-ver">260.6-1</span> <button class="dl-btn" onclick="downloadPkg('libsystemd')">Download</button><div class="details"><pre>Package: libsystemd
+Version: 260.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libcap2, libzstd, xz, zlib
+Filename: pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb
+Size: 823360
+Description: systemd library (libsystemd)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libudev</span> <span class="pkg-ver">260.6-1</span> <button class="dl-btn" onclick="downloadPkg('libudev')">Download</button><div class="details"><pre>Package: libudev
+Version: 260.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libsystemd
+Filename: pool/main/libu/libudev/libudev_260.6-1_amd64.deb
+Size: 579092
+Description: udev library (libudev)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">libzstd</span> <span class="pkg-ver">1.5.7-1</span> <button class="dl-btn" onclick="downloadPkg('libzstd')">Download</button><div class="details"><pre>Package: libzstd
+Version: 1.5.7-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/libz/libzstd/libzstd_1.5.7-1_amd64.deb
+Size: 343388
+Description: Zstandard compression shared library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-firmware</span> <span class="pkg-ver">20260916-1</span> <button class="dl-btn" onclick="downloadPkg('linux-firmware')">Download</button><div class="details"><pre>Package: linux-firmware
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: linux-firmware-intel, linux-firmware-amd, linux-firmware-core, linux-firmware-extra
+Filename: pool/main/l/linux-firmware/linux-firmware_20260916-1_amd64.deb
+Size: 784
+Description: Linux Firmware Metapackage</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-firmware-amd</span> <span class="pkg-ver">20260916-1</span> <button class="dl-btn" onclick="downloadPkg('linux-firmware-amd')">Download</button><div class="details"><pre>Package: linux-firmware-amd
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/l/linux-firmware-amd/linux-firmware-amd_20260916-1_amd64.deb
+Size: 19606724
+Description: AMD GPU Firmware</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-firmware-core</span> <span class="pkg-ver">20260916-1</span> <button class="dl-btn" onclick="downloadPkg('linux-firmware-core')">Download</button><div class="details"><pre>Package: linux-firmware-core
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/l/linux-firmware-core/linux-firmware-core_20260916-1_amd64.deb
+Size: 52151588
+Description: Core WiFi/Ethernet Firmware</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-firmware-extra</span> <span class="pkg-ver">20260916-1</span> <button class="dl-btn" onclick="downloadPkg('linux-firmware-extra')">Download</button><div class="details"><pre>Package: linux-firmware-extra
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/l/linux-firmware-extra/linux-firmware-extra_20260916-1_amd64.deb
+Size: 536566392
+Description: Additional Firmware</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-firmware-intel</span> <span class="pkg-ver">20260916-1</span> <button class="dl-btn" onclick="downloadPkg('linux-firmware-intel')">Download</button><div class="details"><pre>Package: linux-firmware-intel
+Version: 20260916-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/l/linux-firmware-intel/linux-firmware-intel_20260916-1_amd64.deb
+Size: 55866888
+Description: Intel WiFi/GPU/Audio Firmware</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-image</span> <span class="pkg-ver">6.18.58-81manorg</span> <button class="dl-btn" onclick="downloadPkg('linux-image')">Download</button><div class="details"><pre>Package: linux-image
+Version: 6.18.58-81manorg
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: kmod
+Recommends: linux-firmware
+Filename: pool/main/l/linux-image/linux-image_6.18.58-81manorg_amd64.deb
+Size: 47435664
+Section: kernel
+Priority: optional
+Description: Linux 6.18.58-81manorg kernel image and modules</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">linux-pam</span> <span class="pkg-ver">1.7.3-1</span> <button class="dl-btn" onclick="downloadPkg('linux-pam')">Download</button><div class="details"><pre>Package: linux-pam
+Version: 1.7.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: musl
+Filename: pool/main/l/linux-pam/linux-pam_1.7.3-1_amd64.deb
+Size: 662092
+Description: Linux Pluggable Authentication Modules</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">mkbootrd</span> <span class="pkg-ver">2.0-1</span> <button class="dl-btn" onclick="downloadPkg('mkbootrd')">Download</button><div class="details"><pre>Package: mkbootrd
+Version: 2.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: bash, busybox, coreutils, findutils, gawk, kmod, musl, systemd-udev, util-linux-gnu, e2fsprogs, dosfstools
+Filename: pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb
+Size: 6132
+Description: Advanced initramfs builder for 81manorg Linux</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">musl</span> <span class="pkg-ver">1.2.6-1</span> <button class="dl-btn" onclick="downloadPkg('musl')">Download</button><div class="details"><pre>Package: musl
+Version: 1.2.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/m/musl/musl_1.2.6-1_amd64.deb
+Size: 510720
+Description: The musl C library (target rootfs)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">nano</span> <span class="pkg-ver">9.2-1</span> <button class="dl-btn" onclick="downloadPkg('nano')">Download</button><div class="details"><pre>Package: nano
+Version: 9.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: ncurses
+Filename: pool/main/n/nano/nano_9.2-1_amd64.deb
+Size: 263204
+Description: GNU nano text editor</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">ncurses</span> <span class="pkg-ver">6.6-1</span> <button class="dl-btn" onclick="downloadPkg('ncurses')">Download</button><div class="details"><pre>Package: ncurses
+Version: 6.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/n/ncurses/ncurses_6.6-1_amd64.deb
+Size: 640496
+Description: Terminal handling library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">net-tools</span> <span class="pkg-ver">2.10-1</span> <button class="dl-btn" onclick="downloadPkg('net-tools')">Download</button><div class="details"><pre>Package: net-tools
+Version: 2.10-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/n/net-tools/net-tools_2.10-1_amd64.deb
+Size: 144368
+Description: Classic network tools</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">nettle</span> <span class="pkg-ver">3.10.1-1</span> <button class="dl-btn" onclick="downloadPkg('nettle')">Download</button><div class="details"><pre>Package: nettle
+Version: 3.10.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: gmp
+Filename: pool/main/n/nettle/nettle_3.10.1-1_amd64.deb
+Size: 895052
+Description: Low-level cryptographic library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">nftables</span> <span class="pkg-ver">1.1.7-1</span> <button class="dl-btn" onclick="downloadPkg('nftables')">Download</button><div class="details"><pre>Package: nftables
+Version: 1.1.7-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libmnl, libnftnl
+Filename: pool/main/n/nftables/nftables_1.1.7-1_amd64.deb
+Size: 1098548
+Description: nftables packet filtering framework</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">openrc</span> <span class="pkg-ver">0.64.1-1</span> <button class="dl-btn" onclick="downloadPkg('openrc')">Download</button><div class="details"><pre>Package: openrc
+Version: 0.64.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/o/openrc/openrc_0.64.1-1_amd64.deb
+Size: 551668
+Description: OpenRC init system (with 81manorg service scripts)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">openrc-sysvcompat</span> <span class="pkg-ver">0.64.1-1</span> <button class="dl-btn" onclick="downloadPkg('openrc-sysvcompat')">Download</button><div class="details"><pre>Package: openrc-sysvcompat
+Version: 0.64.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: openrc
+Filename: pool/main/o/openrc-sysvcompat/openrc-sysvcompat_0.64.1-1_amd64.deb
+Size: 928
+Description: SysV-compatible init symlinks</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">openssl</span> <span class="pkg-ver">3.6.5-1</span> <button class="dl-btn" onclick="downloadPkg('openssl')">Download</button><div class="details"><pre>Package: openssl
+Version: 3.6.5-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: zlib, ca-certificates
+Filename: pool/main/o/openssl/openssl_3.6.5-1_amd64.deb
+Size: 5304320
+Description: OpenSSL cryptography library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">os-prober</span> <span class="pkg-ver">1.83-2</span> <button class="dl-btn" onclick="downloadPkg('os-prober')">Download</button><div class="details"><pre>Package: os-prober
+Version: 1.83-2
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: util-linux-gnu, grep
+Filename: pool/main/o/os-prober/os-prober_1.83-2_amd64.deb
+Size: 15324
+Description: Detect other operating systems on local disks</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">procps</span> <span class="pkg-ver">0.0.1-1</span> <button class="dl-btn" onclick="downloadPkg('procps')">Download</button><div class="details"><pre>Package: procps
+Version: 0.0.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/p/procps/procps_0.0.1-1_amd64.deb
+Size: 477288
+Description: Rust procps (ps, top, free, pgrep, ...)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">procps-gnu</span> <span class="pkg-ver">4.0.7-1</span> <button class="dl-btn" onclick="downloadPkg('procps-gnu')">Download</button><div class="details"><pre>Package: procps-gnu
+Version: 4.0.7-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: ncurses, libcap2
+Filename: pool/main/p/procps-gnu/procps-gnu_4.0.7-1_amd64.deb
+Size: 157488
+Description: GNU procps (kill, killall, pstree)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">pv</span> <span class="pkg-ver">1.12.0-1</span> <button class="dl-btn" onclick="downloadPkg('pv')">Download</button><div class="details"><pre>Package: pv
+Version: 1.12.0-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/p/pv/pv_1.12.0-1_amd64.deb
+Size: 125596
+Description: Pipe Viewer - progress bar for pipes</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">readline</span> <span class="pkg-ver">8.3-1</span> <button class="dl-btn" onclick="downloadPkg('readline')">Download</button><div class="details"><pre>Package: readline
+Version: 8.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: ncurses
+Filename: pool/main/r/readline/readline_8.3-1_amd64.deb
+Size: 314924
+Description: GNU readline library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">sed</span> <span class="pkg-ver">4.10-1</span> <button class="dl-btn" onclick="downloadPkg('sed')">Download</button><div class="details"><pre>Package: sed
+Version: 4.10-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/s/sed/sed_4.10-1_amd64.deb
+Size: 149376
+Description: GNU sed</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">shadow</span> <span class="pkg-ver">0.2.1-1</span> <button class="dl-btn" onclick="downloadPkg('shadow')">Download</button><div class="details"><pre>Package: shadow
+Version: 0.2.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/s/shadow/shadow_0.2.1-1_amd64.deb
+Size: 994556
+Description: Rust shadow (user and group management)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">shadow-gnu</span> <span class="pkg-ver">4.20.3-1</span> <button class="dl-btn" onclick="downloadPkg('shadow-gnu')">Download</button><div class="details"><pre>Package: shadow-gnu
+Version: 4.20.3-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: linux-pam, elogind
+Filename: pool/main/s/shadow-gnu/shadow-gnu_4.20.3-1_amd64.deb
+Size: 186972
+Description: GNU shadow (the PAM tools: passwd, chfn, chsh, login, expiry, chage)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">systemd-udev</span> <span class="pkg-ver">260.6-1</span> <button class="dl-btn" onclick="downloadPkg('systemd-udev')">Download</button><div class="details"><pre>Package: systemd-udev
+Version: 260.6-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: kmod, libcap2, libzstd, libsystemd, libudev
+Filename: pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb
+Size: 4777828
+Description: Standalone udev device manager</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">tar</span> <span class="pkg-ver">1.35-1</span> <button class="dl-btn" onclick="downloadPkg('tar')">Download</button><div class="details"><pre>Package: tar
+Version: 1.35-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/t/tar/tar_1.35-1_amd64.deb
+Size: 749048
+Description: GNU tar</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">util-linux</span> <span class="pkg-ver">0.0.1-1</span> <button class="dl-btn" onclick="downloadPkg('util-linux')">Download</button><div class="details"><pre>Package: util-linux
+Version: 0.0.1-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/u/util-linux/util-linux_0.0.1-1_amd64.deb
+Size: 903160
+Description: Rust util-linux</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">util-linux-gnu</span> <span class="pkg-ver">2.42.4-1</span> <button class="dl-btn" onclick="downloadPkg('util-linux-gnu')">Download</button><div class="details"><pre>Package: util-linux-gnu
+Version: 2.42.4-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: libcap2, zlib
+Filename: pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb
+Size: 2239184
+Description: GNU util-linux (libmount and the tools the Rust port does not cover)</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">wpa-supplicant</span> <span class="pkg-ver">2.12-1</span> <button class="dl-btn" onclick="downloadPkg('wpa-supplicant')">Download</button><div class="details"><pre>Package: wpa-supplicant
+Version: 2.12-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: openssl, libnl3
+Filename: pool/main/w/wpa-supplicant/wpa-supplicant_2.12-1_amd64.deb
+Size: 515828
+Description: WPA/WPA2/WPA3 supplicant</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">xz</span> <span class="pkg-ver">5.8.4-1</span> <button class="dl-btn" onclick="downloadPkg('xz')">Download</button><div class="details"><pre>Package: xz
+Version: 5.8.4-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/x/xz/xz_5.8.4-1_amd64.deb
+Size: 277168
+Description: XZ compression tools and liblzma</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">zlib</span> <span class="pkg-ver">1.3.2-1</span> <button class="dl-btn" onclick="downloadPkg('zlib')">Download</button><div class="details"><pre>Package: zlib
+Version: 1.3.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Filename: pool/main/z/zlib/zlib_1.3.2-1_amd64.deb
+Size: 80916
+Description: zlib compression shared library</pre></div></li>
+    <li class="pkg-item"><span class="toggle" onclick="toggle(this)">^</span><span class="pkg-name">zsh</span> <span class="pkg-ver">5.9.2-1</span> <button class="dl-btn" onclick="downloadPkg('zsh')">Download</button><div class="details"><pre>Package: zsh
+Version: 5.9.2-1
+Architecture: amd64
+Maintainer: 81manorg Linux &lt;mr81.floss633@passinbox.com&gt;
+Depends: ncurses, libcap2, libpcre2
+Filename: pool/main/z/zsh/zsh_5.9.2-1_amd64.deb
+Size: 2144956
+Description: Z Shell</pre></div></li>
   </ul>
 
-  <hr />
+  <div class="modal-overlay" id="dlModal">
+    <div class="modal">
+      <h3 id="modalTitle">Downloading...</h3>
+      <div class="info" id="modalInfo"></div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="stats">
+        <span id="pctText">0%</span>
+        <span id="speedText">-- KB/s</span>
+        <span id="etaText">ETA: --</span>
+      </div>
+      <div class="status-text" id="statusText">Preparing download...</div>
+      <button class="close-btn" id="closeBtn" onclick="closeModal()" style="display:none;">Close</button>
+    </div>
+  </div>
 
+  <hr />
   <h3>APT Repo Info</h3>
   <pre>deb [trusted=yes] https://the81coder.github.io/81pkg 81main main</pre>
   <p> NOTICE: Everything here is a Git LFS pointer. </p>
+
+  <script>
+    const REPO_BASE = 'https://the81coder.github.io/81pkg';
+    const PKG_DATA = {"81pkg": {"version": "3.0.0-1", "desc": "81manorg Package Manager", "filename": "pool/main/8/81pkg/81pkg_3.0.0-1_amd64.deb", "details": "Package: 81pkg\nVersion: 3.0.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: bash, busybox\nFilename: pool/main/8/81pkg/81pkg_3.0.0-1_amd64.deb\nSize: 15492\nDescription: 81manorg Package Manager"}, "81pkg-keyring": {"version": "1.0-1", "desc": "81manorg GPG keyring for package verification", "filename": "pool/main/8/81pkg-keyring/81pkg-keyring_1.0-1_amd64.deb", "details": "Package: 81pkg-keyring\nVersion: 1.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/8/81pkg-keyring/81pkg-keyring_1.0-1_amd64.deb\nSize: 848\nDescription: 81manorg GPG keyring for package verification"}, "base": {"version": "1.0-1", "desc": "81manorg Base System (meta)", "filename": "pool/main/b/base/base_1.0-1_amd64.deb", "details": "Package: base\nVersion: 1.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: filesystem, busybox, bash, kmod, coreutils, findutils, diffutils, util-linux, util-linux-gnu, procps, procps-gnu, shadow, shadow-gnu, openrc, openrc-sysvcompat, dbus, 81pkg, sed, gzip, linux-pam, elogind, bash-completion, openssl, curl, e2fsprogs, kbd, systemd-udev, libzstd, musl, ncurses, readline, zlib, tar, grep, gawk, ca-certificates, iproute2, iputils, nano\nFilename: pool/main/b/base/base_1.0-1_amd64.deb\nSize: 1020\nDescription: 81manorg Base System (meta)"}, "bash": {"version": "5.3-2", "desc": "GNU Bourne-Again Shell", "filename": "pool/main/b/bash/bash_5.3-2_amd64.deb", "details": "Package: bash\nVersion: 5.3-2\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: musl, readline, ncurses\nFilename: pool/main/b/bash/bash_5.3-2_amd64.deb\nSize: 1712924\nDescription: GNU Bourne-Again Shell"}, "bash-completion": {"version": "2.18.0-1", "desc": "Programmable completion for Bash", "filename": "pool/main/b/bash-completion/bash-completion_2.18.0-1_amd64.deb", "details": "Package: bash-completion\nVersion: 2.18.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: bash\nFilename: pool/main/b/bash-completion/bash-completion_2.18.0-1_amd64.deb\nSize: 192752\nDescription: Programmable completion for Bash"}, "busybox": {"version": "1.38.0-1", "desc": "Embedded Linux utilities (initramfs + safety net)", "filename": "pool/main/b/busybox/busybox_1.38.0-1_amd64.deb", "details": "Package: busybox\nVersion: 1.38.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/b/busybox/busybox_1.38.0-1_amd64.deb\nSize: 684472\nDescription: Embedded Linux utilities (initramfs + safety net)"}, "bzip2": {"version": "1.0.8-1", "desc": "bzip2 compression tools and libbz2", "filename": "pool/main/b/bzip2/bzip2_1.0.8-1_amd64.deb", "details": "Package: bzip2\nVersion: 1.0.8-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/b/bzip2/bzip2_1.0.8-1_amd64.deb\nSize: 64904\nDescription: bzip2 compression tools and libbz2"}, "ca-certificates": {"version": "20261001-1", "desc": "Mozilla CA certificate bundle", "filename": "pool/main/c/ca-certificates/ca-certificates_20261001-1_amd64.deb", "details": "Package: ca-certificates\nVersion: 20261001-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/c/ca-certificates/ca-certificates_20261001-1_amd64.deb\nSize: 111620\nDescription: Mozilla CA certificate bundle"}, "coreutils": {"version": "0.12.0-1", "desc": "Rust coreutils", "filename": "pool/main/c/coreutils/coreutils_0.12.0-1_amd64.deb", "details": "Package: coreutils\nVersion: 0.12.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/c/coreutils/coreutils_0.12.0-1_amd64.deb\nSize: 4022380\nDescription: Rust coreutils"}, "curl": {"version": "8.23.0-1", "desc": "URL transfer tool", "filename": "pool/main/c/curl/curl_8.23.0-1_amd64.deb", "details": "Package: curl\nVersion: 8.23.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: ca-certificates, openssl, zlib, libzstd\nFilename: pool/main/c/curl/curl_8.23.0-1_amd64.deb\nSize: 965480\nDescription: URL transfer tool"}, "dbus": {"version": "1.16.2-1", "desc": "D-Bus message bus", "filename": "pool/main/d/dbus/dbus_1.16.2-1_amd64.deb", "details": "Package: dbus\nVersion: 1.16.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/d/dbus/dbus_1.16.2-1_amd64.deb\nSize: 989180\nDescription: D-Bus message bus"}, "device-mapper": {"version": "2.03.41-1", "desc": "Device mapper userspace library (libdevmapper) and dmsetup", "filename": "pool/main/d/device-mapper/device-mapper_2.03.41-1_amd64.deb", "details": "Package: device-mapper\nVersion: 2.03.41-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/d/device-mapper/device-mapper_2.03.41-1_amd64.deb\nSize: 270028\nDescription: Device mapper userspace library (libdevmapper) and dmsetup"}, "diffutils": {"version": "0.5.0-1", "desc": "Rust diffutils (diff, cmp)", "filename": "pool/main/d/diffutils/diffutils_0.5.0-1_amd64.deb", "details": "Package: diffutils\nVersion: 0.5.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/d/diffutils/diffutils_0.5.0-1_amd64.deb\nSize: 644556\nDescription: Rust diffutils (diff, cmp)"}, "dosfstools": {"version": "4.2-1", "desc": "MS-DOS FAT filesystem utilities (mkfs.fat, fsck.fat)", "filename": "pool/main/d/dosfstools/dosfstools_4.2-1_amd64.deb", "details": "Package: dosfstools\nVersion: 4.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/d/dosfstools/dosfstools_4.2-1_amd64.deb\nSize: 128800\nDescription: MS-DOS FAT filesystem utilities (mkfs.fat, fsck.fat)"}, "e2fsprogs": {"version": "1.47.3-1", "desc": "Ext2/3/4 filesystem utilities (e2fsck, mke2fs, tune2fs)", "filename": "pool/main/e/e2fsprogs/e2fsprogs_1.47.3-1_amd64.deb", "details": "Package: e2fsprogs\nVersion: 1.47.3-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: util-linux-gnu\nFilename: pool/main/e/e2fsprogs/e2fsprogs_1.47.3-1_amd64.deb\nSize: 760268\nDescription: Ext2/3/4 filesystem utilities (e2fsck, mke2fs, tune2fs)"}, "elogind": {"version": "257.16-1", "desc": "elogind session/login manager (standalone logind fork)", "filename": "pool/main/e/elogind/elogind_257.16-1_amd64.deb", "details": "Package: elogind\nVersion: 257.16-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: linux-pam\nFilename: pool/main/e/elogind/elogind_257.16-1_amd64.deb\nSize: 5408888\nDescription: elogind session/login manager (standalone logind fork)"}, "expat": {"version": "2.9.0-1", "desc": "XML parsing library (dbus dependency)", "filename": "pool/main/e/expat/expat_2.9.0-1_amd64.deb", "details": "Package: expat\nVersion: 2.9.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/e/expat/expat_2.9.0-1_amd64.deb\nSize: 133560\nDescription: XML parsing library (dbus dependency)"}, "filesystem": {"version": "1.0-1", "desc": "81manorg base directory layout", "filename": "pool/main/f/filesystem/filesystem_1.0-1_amd64.deb", "details": "Package: filesystem\nVersion: 1.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: busybox\nFilename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb\nSize: 3440\nDescription: 81manorg base directory layout"}, "findutils": {"version": "0.10.0-1", "desc": "Rust findutils (find, locate, updatedb, xargs)", "filename": "pool/main/f/findutils/findutils_0.10.0-1_amd64.deb", "details": "Package: findutils\nVersion: 0.10.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/f/findutils/findutils_0.10.0-1_amd64.deb\nSize: 1443068\nDescription: Rust findutils (find, locate, updatedb, xargs)"}, "gawk": {"version": "5.4.1-1", "desc": "GNU awk", "filename": "pool/main/g/gawk/gawk_5.4.1-1_amd64.deb", "details": "Package: gawk\nVersion: 5.4.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/g/gawk/gawk_5.4.1-1_amd64.deb\nSize: 1297944\nDescription: GNU awk"}, "genfstab": {"version": "32-1", "desc": "Arch install tools", "filename": "pool/main/g/genfstab/genfstab_32-1_amd64.deb", "details": "Package: genfstab\nVersion: 32-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: util-linux-gnu, bash\nFilename: pool/main/g/genfstab/genfstab_32-1_amd64.deb\nSize: 5124\nDescription: Arch install tools"}, "glib": {"version": "2.90.1-1", "desc": "GLib library", "filename": "pool/main/g/glib/glib_2.90.1-1_amd64.deb", "details": "Package: glib\nVersion: 2.90.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libzstd, libpcre2\nFilename: pool/main/g/glib/glib_2.90.1-1_amd64.deb\nSize: 7838296\nDescription: GLib library"}, "gmp": {"version": "6.3.0-1", "desc": "GNU multiple precision arithmetic library", "filename": "pool/main/g/gmp/gmp_6.3.0-1_amd64.deb", "details": "Package: gmp\nVersion: 6.3.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/g/gmp/gmp_6.3.0-1_amd64.deb\nSize: 344220\nDescription: GNU multiple precision arithmetic library"}, "gnutls": {"version": "3.8.10-1", "desc": "GNU TLS library", "filename": "pool/main/g/gnutls/gnutls_3.8.10-1_amd64.deb", "details": "Package: gnutls\nVersion: 3.8.10-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: nettle, gmp\nFilename: pool/main/g/gnutls/gnutls_3.8.10-1_amd64.deb\nSize: 1795668\nDescription: GNU TLS library"}, "grep": {"version": "3.12-1", "desc": "GNU grep", "filename": "pool/main/g/grep/grep_3.12-1_amd64.deb", "details": "Package: grep\nVersion: 3.12-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libpcre2\nFilename: pool/main/g/grep/grep_3.12-1_amd64.deb\nSize: 159628\nDescription: GNU grep"}, "grub": {"version": "2.14-1", "desc": "GRUB bootloader (metapackage)", "filename": "pool/main/g/grub/grub_2.14-1_amd64.deb", "details": "Package: grub\nVersion: 2.14-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: grub-common, grub-bios, grub-efi-x86-64\nFilename: pool/main/g/grub/grub_2.14-1_amd64.deb\nSize: 836\nDescription: GRUB bootloader (metapackage)"}, "grub-bios": {"version": "2.14-1", "desc": "GRUB modules and BIOS setup (i386-pc)", "filename": "pool/main/g/grub-bios/grub-bios_2.14-1_amd64.deb", "details": "Package: grub-bios\nVersion: 2.14-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: grub-common\nFilename: pool/main/g/grub-bios/grub-bios_2.14-1_amd64.deb\nSize: 5122468\nDescription: GRUB modules and BIOS setup (i386-pc)"}, "grub-common": {"version": "2.14-1", "desc": "GRUB common tools: grub-install, grub-mkconfig, grub-probe", "filename": "pool/main/g/grub-common/grub-common_2.14-1_amd64.deb", "details": "Package: grub-common\nVersion: 2.14-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: device-mapper, xz, os-prober, util-linux-gnu\nFilename: pool/main/g/grub-common/grub-common_2.14-1_amd64.deb\nSize: 1802232\nDescription: GRUB common tools: grub-install, grub-mkconfig, grub-probe"}, "grub-efi-x86-64": {"version": "2.14-1", "desc": "GRUB modules for 64-bit UEFI (x86_64-efi)", "filename": "pool/main/g/grub-efi-x86-64/grub-efi-x86-64_2.14-1_amd64.deb", "details": "Package: grub-efi-x86-64\nVersion: 2.14-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: grub-common\nFilename: pool/main/g/grub-efi-x86-64/grub-efi-x86-64_2.14-1_amd64.deb\nSize: 836\nDescription: GRUB modules for 64-bit UEFI (x86_64-efi)"}, "gzip": {"version": "1.15-1", "desc": "GNU gzip compression utility", "filename": "pool/main/g/gzip/gzip_1.15-1_amd64.deb", "details": "Package: gzip\nVersion: 1.15-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/g/gzip/gzip_1.15-1_amd64.deb\nSize: 89568\nDescription: GNU gzip compression utility"}, "iproute2": {"version": "6.13.0-1", "desc": "IP routing and network utilities", "filename": "pool/main/i/iproute2/iproute2_6.13.0-1_amd64.deb", "details": "Package: iproute2\nVersion: 6.13.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/i/iproute2/iproute2_6.13.0-1_amd64.deb\nSize: 1010916\nDescription: IP routing and network utilities"}, "iputils": {"version": "20250605-1", "desc": "ping, arping, tracepath", "filename": "pool/main/i/iputils/iputils_20250605-1_amd64.deb", "details": "Package: iputils\nVersion: 20250605-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libcap2\nFilename: pool/main/i/iputils/iputils_20250605-1_amd64.deb\nSize: 198728\nDescription: ping, arping, tracepath"}, "kbd": {"version": "2.9.0-1", "desc": "Linux console tools: loadkeys, setfont, keymaps", "filename": "pool/main/k/kbd/kbd_2.9.0-1_amd64.deb", "details": "Package: kbd\nVersion: 2.9.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/k/kbd/kbd_2.9.0-1_amd64.deb\nSize: 1102852\nDescription: Linux console tools: loadkeys, setfont, keymaps"}, "kmod": {"version": "34.2-1", "desc": "Kernel module tools", "filename": "pool/main/k/kmod/kmod_34.2-1_amd64.deb", "details": "Package: kmod\nVersion: 34.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/k/kmod/kmod_34.2-1_amd64.deb\nSize: 97076\nDescription: Kernel module tools"}, "libcap2": {"version": "2.78-1", "desc": "POSIX capabilities library", "filename": "pool/main/libc/libcap2/libcap2_2.78-1_amd64.deb", "details": "Package: libcap2\nVersion: 2.78-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libc/libcap2/libcap2_2.78-1_amd64.deb\nSize: 756\nDescription: POSIX capabilities library"}, "libedit": {"version": "3.1-20260512-1", "desc": "BSD editline library", "filename": "pool/main/libe/libedit/libedit_3.1-20260512-1_amd64.deb", "details": "Package: libedit\nVersion: 3.1-20260512-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libe/libedit/libedit_3.1-20260512-1_amd64.deb\nSize: 109020\nDescription: BSD editline library"}, "libffi": {"version": "3.8.0-1", "desc": "Foreign function interface library (glib dependency)", "filename": "pool/main/libf/libffi/libffi_3.8.0-1_amd64.deb", "details": "Package: libffi\nVersion: 3.8.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libf/libffi/libffi_3.8.0-1_amd64.deb\nSize: 47264\nDescription: Foreign function interface library (glib dependency)"}, "libgcc": {"version": "16.2.1-1", "desc": "GCC static support library (libgcc.a, static-link only)", "filename": "pool/main/libg/libgcc/libgcc_16.2.1-1_amd64.deb", "details": "Package: libgcc\nVersion: 16.2.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libg/libgcc/libgcc_16.2.1-1_amd64.deb\nSize: 1339288\nDescription: GCC static support library (libgcc.a, static-link only)"}, "libmnl": {"version": "1.0.5-1", "desc": "Minimalistic Netlink library", "filename": "pool/main/libm/libmnl/libmnl_1.0.5-1_amd64.deb", "details": "Package: libmnl\nVersion: 1.0.5-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libm/libmnl/libmnl_1.0.5-1_amd64.deb\nSize: 10088\nDescription: Minimalistic Netlink library"}, "libnftnl": {"version": "1.3.2-1", "desc": "nftables netlink library", "filename": "pool/main/libn/libnftnl/libnftnl_1.3.2-1_amd64.deb", "details": "Package: libnftnl\nVersion: 1.3.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libmnl\nFilename: pool/main/libn/libnftnl/libnftnl_1.3.2-1_amd64.deb\nSize: 78208\nDescription: nftables netlink library"}, "libnl3": {"version": "3.12.0-1", "desc": "Netlink socket library", "filename": "pool/main/libn/libnl3/libnl3_3.12.0-1_amd64.deb", "details": "Package: libnl3\nVersion: 3.12.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libn/libnl3/libnl3_3.12.0-1_amd64.deb\nSize: 376864\nDescription: Netlink socket library"}, "libpcre2": {"version": "10.49-1", "desc": "Perl-compatible regular expressions v2 library", "filename": "pool/main/libp/libpcre2/libpcre2_10.49-1_amd64.deb", "details": "Package: libpcre2\nVersion: 10.49-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libp/libpcre2/libpcre2_10.49-1_amd64.deb\nSize: 1061348\nDescription: Perl-compatible regular expressions v2 library"}, "libsystemd": {"version": "260.6-1", "desc": "systemd library (libsystemd)", "filename": "pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb", "details": "Package: libsystemd\nVersion: 260.6-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libcap2, libzstd, xz, zlib\nFilename: pool/main/libs/libsystemd/libsystemd_260.6-1_amd64.deb\nSize: 823360\nDescription: systemd library (libsystemd)"}, "libudev": {"version": "260.6-1", "desc": "udev library (libudev)", "filename": "pool/main/libu/libudev/libudev_260.6-1_amd64.deb", "details": "Package: libudev\nVersion: 260.6-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libsystemd\nFilename: pool/main/libu/libudev/libudev_260.6-1_amd64.deb\nSize: 579092\nDescription: udev library (libudev)"}, "libzstd": {"version": "1.5.7-1", "desc": "Zstandard compression shared library", "filename": "pool/main/libz/libzstd/libzstd_1.5.7-1_amd64.deb", "details": "Package: libzstd\nVersion: 1.5.7-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/libz/libzstd/libzstd_1.5.7-1_amd64.deb\nSize: 343388\nDescription: Zstandard compression shared library"}, "linux-firmware": {"version": "20260916-1", "desc": "Linux Firmware Metapackage", "filename": "pool/main/l/linux-firmware/linux-firmware_20260916-1_amd64.deb", "details": "Package: linux-firmware\nVersion: 20260916-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: linux-firmware-intel, linux-firmware-amd, linux-firmware-core, linux-firmware-extra\nFilename: pool/main/l/linux-firmware/linux-firmware_20260916-1_amd64.deb\nSize: 784\nDescription: Linux Firmware Metapackage"}, "linux-firmware-amd": {"version": "20260916-1", "desc": "AMD GPU Firmware", "filename": "pool/main/l/linux-firmware-amd/linux-firmware-amd_20260916-1_amd64.deb", "details": "Package: linux-firmware-amd\nVersion: 20260916-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/l/linux-firmware-amd/linux-firmware-amd_20260916-1_amd64.deb\nSize: 19606724\nDescription: AMD GPU Firmware"}, "linux-firmware-core": {"version": "20260916-1", "desc": "Core WiFi/Ethernet Firmware", "filename": "pool/main/l/linux-firmware-core/linux-firmware-core_20260916-1_amd64.deb", "details": "Package: linux-firmware-core\nVersion: 20260916-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/l/linux-firmware-core/linux-firmware-core_20260916-1_amd64.deb\nSize: 52151588\nDescription: Core WiFi/Ethernet Firmware"}, "linux-firmware-extra": {"version": "20260916-1", "desc": "Additional Firmware", "filename": "pool/main/l/linux-firmware-extra/linux-firmware-extra_20260916-1_amd64.deb", "details": "Package: linux-firmware-extra\nVersion: 20260916-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/l/linux-firmware-extra/linux-firmware-extra_20260916-1_amd64.deb\nSize: 536566392\nDescription: Additional Firmware"}, "linux-firmware-intel": {"version": "20260916-1", "desc": "Intel WiFi/GPU/Audio Firmware", "filename": "pool/main/l/linux-firmware-intel/linux-firmware-intel_20260916-1_amd64.deb", "details": "Package: linux-firmware-intel\nVersion: 20260916-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/l/linux-firmware-intel/linux-firmware-intel_20260916-1_amd64.deb\nSize: 55866888\nDescription: Intel WiFi/GPU/Audio Firmware"}, "linux-image": {"version": "6.18.58-81manorg", "desc": "Linux 6.18.58-81manorg kernel image and modules", "filename": "pool/main/l/linux-image/linux-image_6.18.58-81manorg_amd64.deb", "details": "Package: linux-image\nVersion: 6.18.58-81manorg\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: kmod\nRecommends: linux-firmware\nFilename: pool/main/l/linux-image/linux-image_6.18.58-81manorg_amd64.deb\nSize: 47435664\nSection: kernel\nPriority: optional\nDescription: Linux 6.18.58-81manorg kernel image and modules"}, "linux-pam": {"version": "1.7.3-1", "desc": "Linux Pluggable Authentication Modules", "filename": "pool/main/l/linux-pam/linux-pam_1.7.3-1_amd64.deb", "details": "Package: linux-pam\nVersion: 1.7.3-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: musl\nFilename: pool/main/l/linux-pam/linux-pam_1.7.3-1_amd64.deb\nSize: 662092\nDescription: Linux Pluggable Authentication Modules"}, "mkbootrd": {"version": "2.0-1", "desc": "Advanced initramfs builder for 81manorg Linux", "filename": "pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb", "details": "Package: mkbootrd\nVersion: 2.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: bash, busybox, coreutils, findutils, gawk, kmod, musl, systemd-udev, util-linux-gnu, e2fsprogs, dosfstools\nFilename: pool/main/m/mkbootrd/mkbootrd_2.0-1_amd64.deb\nSize: 6132\nDescription: Advanced initramfs builder for 81manorg Linux"}, "musl": {"version": "1.2.6-1", "desc": "The musl C library (target rootfs)", "filename": "pool/main/m/musl/musl_1.2.6-1_amd64.deb", "details": "Package: musl\nVersion: 1.2.6-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/m/musl/musl_1.2.6-1_amd64.deb\nSize: 510720\nDescription: The musl C library (target rootfs)"}, "nano": {"version": "9.2-1", "desc": "GNU nano text editor", "filename": "pool/main/n/nano/nano_9.2-1_amd64.deb", "details": "Package: nano\nVersion: 9.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: ncurses\nFilename: pool/main/n/nano/nano_9.2-1_amd64.deb\nSize: 263204\nDescription: GNU nano text editor"}, "ncurses": {"version": "6.6-1", "desc": "Terminal handling library", "filename": "pool/main/n/ncurses/ncurses_6.6-1_amd64.deb", "details": "Package: ncurses\nVersion: 6.6-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/n/ncurses/ncurses_6.6-1_amd64.deb\nSize: 640496\nDescription: Terminal handling library"}, "net-tools": {"version": "2.10-1", "desc": "Classic network tools", "filename": "pool/main/n/net-tools/net-tools_2.10-1_amd64.deb", "details": "Package: net-tools\nVersion: 2.10-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/n/net-tools/net-tools_2.10-1_amd64.deb\nSize: 144368\nDescription: Classic network tools"}, "nettle": {"version": "3.10.1-1", "desc": "Low-level cryptographic library", "filename": "pool/main/n/nettle/nettle_3.10.1-1_amd64.deb", "details": "Package: nettle\nVersion: 3.10.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: gmp\nFilename: pool/main/n/nettle/nettle_3.10.1-1_amd64.deb\nSize: 895052\nDescription: Low-level cryptographic library"}, "nftables": {"version": "1.1.7-1", "desc": "nftables packet filtering framework", "filename": "pool/main/n/nftables/nftables_1.1.7-1_amd64.deb", "details": "Package: nftables\nVersion: 1.1.7-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libmnl, libnftnl\nFilename: pool/main/n/nftables/nftables_1.1.7-1_amd64.deb\nSize: 1098548\nDescription: nftables packet filtering framework"}, "openrc": {"version": "0.64.1-1", "desc": "OpenRC init system (with 81manorg service scripts)", "filename": "pool/main/o/openrc/openrc_0.64.1-1_amd64.deb", "details": "Package: openrc\nVersion: 0.64.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/o/openrc/openrc_0.64.1-1_amd64.deb\nSize: 551668\nDescription: OpenRC init system (with 81manorg service scripts)"}, "openrc-sysvcompat": {"version": "0.64.1-1", "desc": "SysV-compatible init symlinks", "filename": "pool/main/o/openrc-sysvcompat/openrc-sysvcompat_0.64.1-1_amd64.deb", "details": "Package: openrc-sysvcompat\nVersion: 0.64.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: openrc\nFilename: pool/main/o/openrc-sysvcompat/openrc-sysvcompat_0.64.1-1_amd64.deb\nSize: 928\nDescription: SysV-compatible init symlinks"}, "openssl": {"version": "3.6.5-1", "desc": "OpenSSL cryptography library", "filename": "pool/main/o/openssl/openssl_3.6.5-1_amd64.deb", "details": "Package: openssl\nVersion: 3.6.5-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: zlib, ca-certificates\nFilename: pool/main/o/openssl/openssl_3.6.5-1_amd64.deb\nSize: 5304320\nDescription: OpenSSL cryptography library"}, "os-prober": {"version": "1.83-2", "desc": "Detect other operating systems on local disks", "filename": "pool/main/o/os-prober/os-prober_1.83-2_amd64.deb", "details": "Package: os-prober\nVersion: 1.83-2\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: util-linux-gnu, grep\nFilename: pool/main/o/os-prober/os-prober_1.83-2_amd64.deb\nSize: 15324\nDescription: Detect other operating systems on local disks"}, "procps": {"version": "0.0.1-1", "desc": "Rust procps (ps, top, free, pgrep, ...)", "filename": "pool/main/p/procps/procps_0.0.1-1_amd64.deb", "details": "Package: procps\nVersion: 0.0.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/p/procps/procps_0.0.1-1_amd64.deb\nSize: 477288\nDescription: Rust procps (ps, top, free, pgrep, ...)"}, "procps-gnu": {"version": "4.0.7-1", "desc": "GNU procps (kill, killall, pstree)", "filename": "pool/main/p/procps-gnu/procps-gnu_4.0.7-1_amd64.deb", "details": "Package: procps-gnu\nVersion: 4.0.7-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: ncurses, libcap2\nFilename: pool/main/p/procps-gnu/procps-gnu_4.0.7-1_amd64.deb\nSize: 157488\nDescription: GNU procps (kill, killall, pstree)"}, "pv": {"version": "1.12.0-1", "desc": "Pipe Viewer - progress bar for pipes", "filename": "pool/main/p/pv/pv_1.12.0-1_amd64.deb", "details": "Package: pv\nVersion: 1.12.0-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/p/pv/pv_1.12.0-1_amd64.deb\nSize: 125596\nDescription: Pipe Viewer - progress bar for pipes"}, "readline": {"version": "8.3-1", "desc": "GNU readline library", "filename": "pool/main/r/readline/readline_8.3-1_amd64.deb", "details": "Package: readline\nVersion: 8.3-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: ncurses\nFilename: pool/main/r/readline/readline_8.3-1_amd64.deb\nSize: 314924\nDescription: GNU readline library"}, "sed": {"version": "4.10-1", "desc": "GNU sed", "filename": "pool/main/s/sed/sed_4.10-1_amd64.deb", "details": "Package: sed\nVersion: 4.10-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/s/sed/sed_4.10-1_amd64.deb\nSize: 149376\nDescription: GNU sed"}, "shadow": {"version": "0.2.1-1", "desc": "Rust shadow (user and group management)", "filename": "pool/main/s/shadow/shadow_0.2.1-1_amd64.deb", "details": "Package: shadow\nVersion: 0.2.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/s/shadow/shadow_0.2.1-1_amd64.deb\nSize: 994556\nDescription: Rust shadow (user and group management)"}, "shadow-gnu": {"version": "4.20.3-1", "desc": "GNU shadow (the PAM tools: passwd, chfn, chsh, login, expiry, chage)", "filename": "pool/main/s/shadow-gnu/shadow-gnu_4.20.3-1_amd64.deb", "details": "Package: shadow-gnu\nVersion: 4.20.3-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: linux-pam, elogind\nFilename: pool/main/s/shadow-gnu/shadow-gnu_4.20.3-1_amd64.deb\nSize: 186972\nDescription: GNU shadow (the PAM tools: passwd, chfn, chsh, login, expiry, chage)"}, "systemd-udev": {"version": "260.6-1", "desc": "Standalone udev device manager", "filename": "pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb", "details": "Package: systemd-udev\nVersion: 260.6-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: kmod, libcap2, libzstd, libsystemd, libudev\nFilename: pool/main/s/systemd-udev/systemd-udev_260.6-1_amd64.deb\nSize: 4777828\nDescription: Standalone udev device manager"}, "tar": {"version": "1.35-1", "desc": "GNU tar", "filename": "pool/main/t/tar/tar_1.35-1_amd64.deb", "details": "Package: tar\nVersion: 1.35-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/t/tar/tar_1.35-1_amd64.deb\nSize: 749048\nDescription: GNU tar"}, "util-linux": {"version": "0.0.1-1", "desc": "Rust util-linux", "filename": "pool/main/u/util-linux/util-linux_0.0.1-1_amd64.deb", "details": "Package: util-linux\nVersion: 0.0.1-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/u/util-linux/util-linux_0.0.1-1_amd64.deb\nSize: 903160\nDescription: Rust util-linux"}, "util-linux-gnu": {"version": "2.42.4-1", "desc": "GNU util-linux (libmount and the tools the Rust port does not cover)", "filename": "pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb", "details": "Package: util-linux-gnu\nVersion: 2.42.4-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: libcap2, zlib\nFilename: pool/main/u/util-linux-gnu/util-linux-gnu_2.42.4-1_amd64.deb\nSize: 2239184\nDescription: GNU util-linux (libmount and the tools the Rust port does not cover)"}, "wpa-supplicant": {"version": "2.12-1", "desc": "WPA/WPA2/WPA3 supplicant", "filename": "pool/main/w/wpa-supplicant/wpa-supplicant_2.12-1_amd64.deb", "details": "Package: wpa-supplicant\nVersion: 2.12-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: openssl, libnl3\nFilename: pool/main/w/wpa-supplicant/wpa-supplicant_2.12-1_amd64.deb\nSize: 515828\nDescription: WPA/WPA2/WPA3 supplicant"}, "xz": {"version": "5.8.4-1", "desc": "XZ compression tools and liblzma", "filename": "pool/main/x/xz/xz_5.8.4-1_amd64.deb", "details": "Package: xz\nVersion: 5.8.4-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/x/xz/xz_5.8.4-1_amd64.deb\nSize: 277168\nDescription: XZ compression tools and liblzma"}, "zlib": {"version": "1.3.2-1", "desc": "zlib compression shared library", "filename": "pool/main/z/zlib/zlib_1.3.2-1_amd64.deb", "details": "Package: zlib\nVersion: 1.3.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nFilename: pool/main/z/zlib/zlib_1.3.2-1_amd64.deb\nSize: 80916\nDescription: zlib compression shared library"}, "zsh": {"version": "5.9.2-1", "desc": "Z Shell", "filename": "pool/main/z/zsh/zsh_5.9.2-1_amd64.deb", "details": "Package: zsh\nVersion: 5.9.2-1\nArchitecture: amd64\nMaintainer: 81manorg Linux <mr81.floss633@passinbox.com>\nDepends: ncurses, libcap2, libpcre2\nFilename: pool/main/z/zsh/zsh_5.9.2-1_amd64.deb\nSize: 2144956\nDescription: Z Shell"}};
+    function toggle(el) {
+      var details = el.parentElement.querySelector('.details');
+      details.classList.toggle('open');
+      el.textContent = details.classList.contains('open') ? 'v' : '^';
+    }
+
+    async function downloadPkg(pkgName) {
+      var info = PKG_DATA[pkgName];
+      if (!info || !info.filename) { alert('No filename available for ' + pkgName); return; }
+      var filename = info.filename;
+      var version = info.version;
+      var desc = info.desc;
+
+      var btn = event.target;
+      btn.disabled = true;
+
+      var modal = document.getElementById('dlModal');
+      var title = document.getElementById('modalTitle');
+      var infoEl = document.getElementById('modalInfo');
+      var fill = document.getElementById('progressFill');
+      var pct = document.getElementById('pctText');
+      var speed = document.getElementById('speedText');
+      var eta = document.getElementById('etaText');
+      var status = document.getElementById('statusText');
+      var closeBtn = document.getElementById('closeBtn');
+
+      title.textContent = 'Downloading ' + pkgName;
+      infoEl.innerHTML = '<span>Package:</span> ' + escHtml(pkgName) + '<br><span>Version:</span> ' + escHtml(version) + '<br><span>Description:</span> ' + escHtml(desc) + '<br><span>File:</span> ' + escHtml(filename);
+      fill.style.width = '0%';
+      pct.textContent = '0%';
+      speed.textContent = '-- KB/s';
+      eta.textContent = 'ETA: --';
+      status.textContent = 'Starting download...';
+      closeBtn.style.display = 'none';
+      modal.classList.add('show');
+
+      var url = REPO_BASE + '/' + filename;
+
+      try {
+        status.textContent = 'Fetching file...';
+        var resp = await fetch(url);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        var buffer = await resp.arrayBuffer();
+        var text = new TextDecoder().decode(buffer);
+
+        var firstLine = text.split('\n')[0].trim();
+        var isLfs = (firstLine === 'version https://git-lfs.github.com/spec/v1' ||
+                     firstLine === 'version https://git-lfs.github.com/spec/v2');
+
+        if (isLfs) {
+          var lines = text.split('\n');
+          var lfsOid = null, lfsSize = null;
+          for (var i = 0; i < lines.length; i++) {
+            var m = lines[i].match(/^oid sha256:([a-f0-9]+)$/);
+            if (m) lfsOid = m[1];
+            m = lines[i].match(/^size (\d+)$/);
+            if (m) lfsSize = parseInt(m[1]);
+          }
+          if (!lfsOid || !lfsSize) throw new Error('Malformed LFS pointer');
+
+          status.textContent = 'Resolving LFS object...';
+          var owner = 'the81coder';
+          var repo = '81pkg';
+          var apiUrl = 'https://github.com/' + owner + '/' + repo + '.git/info/lfs/objects/batch';
+          var body = JSON.stringify({
+            operation: 'download',
+            transfers: ['basic'],
+            objects: [{ oid: lfsOid, size: lfsSize }]
+          });
+          var apiResp = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/vnd.git-lfs+json',
+              'Content-Type': 'application/vnd.git-lfs+json'
+            },
+            body: body
+          });
+          if (!apiResp.ok) throw new Error('LFS batch request failed');
+          var apiData = await apiResp.json();
+          if (!apiData.objects || !apiData.objects[0] || !apiData.objects[0].actions || !apiData.objects[0].actions.download) {
+            throw new Error('No LFS download URL received');
+          }
+          var downloadHref = apiData.objects[0].actions.download.href;
+
+          status.textContent = 'Downloading LFS object...';
+          await downloadWithProgress(downloadHref, lfsSize, filename, fill, pct, speed, eta, status);
+        } else {
+          status.textContent = 'Saving file...';
+          var blob = new Blob([buffer]);
+          var blobUrl = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = blobUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(blobUrl);
+          fill.style.width = '100%';
+          pct.textContent = '100%';
+          status.textContent = 'Download complete!';
+        }
+
+        closeBtn.style.display = 'inline-block';
+      } catch (err) {
+        status.textContent = 'Error: ' + err.message;
+        closeBtn.style.display = 'inline-block';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    async function downloadWithProgress(url, totalSize, filename, fill, pct, speed, eta, status) {
+      var resp = await fetch(url);
+      if (!resp.ok) throw new Error('Download failed: HTTP ' + resp.status);
+
+      var reader = resp.body.getReader();
+      var received = 0;
+      var chunks = [];
+      var startTime = Date.now();
+
+      while (true) {
+        var result = await reader.read();
+        if (result.done) break;
+        chunks.push(result.value);
+        received += result.value.length;
+
+        var percent = totalSize > 0 ? Math.round((received / totalSize) * 100) : 0;
+        fill.style.width = percent + '%';
+        pct.textContent = percent + '%';
+
+        var elapsed = (Date.now() - startTime) / 1000;
+        if (elapsed > 0) {
+          var speedBps = received / elapsed;
+          var speedStr = speedBps > 1048576
+            ? (speedBps / 1048576).toFixed(1) + ' MB/s'
+            : (speedBps / 1024).toFixed(1) + ' KB/s';
+          speed.textContent = speedStr;
+
+          if (received > 0 && totalSize > 0) {
+            var remaining = (totalSize - received) / speedBps;
+            var etaStr = remaining > 60
+              ? Math.round(remaining / 60) + 'm ' + Math.round(remaining % 60) + 's'
+              : Math.round(remaining) + 's';
+            eta.textContent = 'ETA: ' + etaStr;
+          }
+        }
+        status.textContent = 'Downloading... ' + formatBytes(received) + ' / ' + formatBytes(totalSize);
+      }
+
+      var blob = new Blob(chunks);
+      var blobUrl = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
+    }
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      var k = 1024;
+      var sizes = ['B', 'KB', 'MB', 'GB'];
+      var i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function closeModal() {
+      document.getElementById('dlModal').classList.remove('show');
+    }
+  </script>
 </body>
 </html>

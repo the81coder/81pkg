@@ -4,10 +4,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: bash, busybox
 Filename: pool/main/8/81pkg/81pkg_3.0.0-1_amd64.deb
-Size: 14360
-MD5sum: a2f11df6d951726a632d4cb87e39d4ee
-SHA1: 1f398dba180464c7f8b195570517c5fcde9f38dc
-SHA256: 322b198dbcd15fcdb31f949b4e565d5f9e9e3e7fbe69fa35f1466e93db25f456
+Size: 15492
+MD5sum: 0caaf80da0a3bfb75f3a387943965ff2
+SHA1: c1c66df6bba45be46291888a28e637992271766b
+SHA256: 347547fa1c449764916caad3f528bbcdd8ef54c7196fc6ea4bfbb4676af182dc
 Description: 81manorg Package Manager
 
 Package: 81pkg-keyring
@@ -198,10 +198,10 @@ Architecture: amd64
 Maintainer: 81manorg Linux <mr81.floss633@passinbox.com>
 Depends: busybox
 Filename: pool/main/f/filesystem/filesystem_1.0-1_amd64.deb
-Size: 3448
-MD5sum: 375760413dea6d735cdae91b375ee6fe
-SHA1: ac0559776762410df7bc529cc22513f771b6df60
-SHA256: de2c9f1e4f27993b484d348745bb9e288dae33caaac94829af50307b1444ee2c
+Size: 3440
+MD5sum: 85ed41dfb38bc6dc883e396e19be6255
+SHA1: 5882485820061ddb20626dafc3ac9e2db296c47c
+SHA256: 6911ffb886e33667e48abe6301707a4e0fe9a784abe08df20ad84b4d7fd04c9c
 Description: 81manorg base directory layout
 
 Package: findutils
